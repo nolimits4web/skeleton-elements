@@ -1,0 +1,27 @@
+{
+  "name": "skeleton-elements",
+  "version": "0.0.1",
+  "description": "Skeleton elements",
+  "main": "index.js",
+  "scripts": {
+    "build-font": "python ./build/generate.py && ttf2woff ./src/font/skeleton.ttf ./src/font/skeleton.woff",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolimits4web/skeleton-elements.git"
+  },
+  "keywords": [
+    "skeleton",
+    "ghost"
+  ],
+  "author": "Vladimir Kharlampidi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nolimits4web/skeleton-elements/issues"
+  },
+  "homepage": "https://github.com/nolimits4web/skeleton-elements#readme",
+  "devDependencies": {
+    "ttf2woff": "^2.0.1"
+  }
+}
