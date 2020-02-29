@@ -1,0 +1,13 @@
+.skeleton-image {
+  display: inline-block;
+  svg {
+    width: 100%;
+    height: auto;
+  }
+  polygon {
+    fill: var(--skeleton-color);
+  }
+  path {
+    fill: var(--skeleton-icon-color);
+  }
+}
