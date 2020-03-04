@@ -1,4 +1,5 @@
 import React from 'react';
+import multiplySvgPoints from '../utils/multiply-svg-points';
 
 const SkeletonAvatar = ({
   tag: Tag = 'span',
@@ -21,18 +22,7 @@ const SkeletonAvatar = ({
     .join(' ');
 
   function multiplyPoints(pointsString) {
-    const picSize = 56;
-    const picMaxSize = size * 0.5;
-    const scale  = picMaxSize / picSize;
-    return pointsString.replace(/([0-9,\.]{1,})/g, (coords) => {
-      coords = coords.split(',').map((p) => parseFloat(p));
-      const x = coords[0] * scale + size / 2 - (picSize * scale) / 2;
-      const y = coords[1] * scale + size / 2 - (picSize * scale) / 2;
-      if (picMaxSize >= 100) {
-        return `${Math.round(x)},${Math.round(y)}`;  
-      }
-      return `${x},${y}`;
-    });
+    return multiplySvgPoints(pointsString, 56, size, size);
   }
 
   return (

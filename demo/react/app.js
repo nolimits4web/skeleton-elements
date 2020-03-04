@@ -3,7 +3,7 @@ import { SkeletonText, SkeletonBlock, SkeletonImage, SkeletonAvatar } from '../.
 
 const App = () => {
   const [effect, setEffect] = useState(null);
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   
   function load(eff) {
     if (effect) return;
