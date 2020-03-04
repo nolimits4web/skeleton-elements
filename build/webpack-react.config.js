@@ -14,7 +14,7 @@ const env = process.env.NODE_ENV || 'development';
 module.exports = {
   mode: env,
   entry: {
-    app: './demo/react/app.js',
+    app: './demo/react/main.js',
   },
   output: {
     path: resolvePath('demo/react/public'),

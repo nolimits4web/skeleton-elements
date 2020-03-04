@@ -1,6 +1,78 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  font-family: system-ui;
+  line-height: 1.4;
+  font-size: 14px;
+}
+#app {
+  display: contents;
+}
+.theme {
+  min-height: 100%;
+}
+.theme-dark {
+  background: #000;
+  color: #fff;
+  --skeleton-color: #333;
+  --skeleton-icon-color: rgba(255, 255, 255, 0.1);
+}
 .container {
   max-width: 960px;
   margin: 0 auto;
   box-sizing: border-box;
-  padding: 0 40px;
+  padding: 40px;
+}
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  button + label {
+    margin-left: auto;
+  }
+  label {
+    cursor: pointer;
+  }
+  label span {
+    margin-left: 4px;
+  }
+  label + label {
+    margin-left: 16px;
+  }
+}
+.demo-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+}
+.demo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: flex;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    + li {
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+  }
+  &-avatar {
+    width: 60px;
+  }
+  &-content {
+    flex-shrink: 10;
+    min-width: 0;
+    margin-left: 16px;
+    p {
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  }
+  &-title {
+    font-size: 1.25em;
+    font-weight: bold;
+  }
 }

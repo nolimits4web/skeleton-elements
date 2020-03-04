@@ -8,6 +8,7 @@
 }
 .skeleton-text {
   font-family: 'skeleton' !important;
+  user-select: none;
   &, & * {
     color: var(--skeleton-color) !important;
     letter-spacing: -0.015em !important;
