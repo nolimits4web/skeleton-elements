@@ -7,7 +7,8 @@
     "build-font": "python ./build/generate.py && ttf2woff ./src/font/skeleton.ttf ./src/font/skeleton.woff",
     "test": "echo \"Error: no test specified\" && exit 1",
     "react": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack-react.config.js",
-    "vue": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack-vue.config.js"
+    "vue": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack-vue.config.js",
+    "svelte": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack-svelte.config.js"
   },
   "repository": {
     "type": "git",
@@ -49,6 +50,8 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
+    "svelte": "^3.19.1",
+    "svelte-loader": "^2.13.6",
     "ttf2woff": "^2.0.1",
     "vue": "^2.6.11",
     "vue-loader": "^15.9.0",
