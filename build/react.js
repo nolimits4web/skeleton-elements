@@ -14,20 +14,28 @@ const babelOptions = {
   ],
 };
 
-function build() {
-  babel.transformFile(
-    path.resolve(__dirname, '../src/react.js'),
+function transformFile(fileName) {
+  return babel.transformFile(
+    path.resolve(__dirname, `../src/react/${fileName}`),
     babelOptions,
     (err, result) => {
       if (err) {
-        throw err;
+        console.error(err);
+        return;
       }
       fs.writeFileSync(
-        path.resolve(__dirname, '../packages/react/index.js'),
-        result.code,
+        path.resolve(__dirname, `../packages/react/${fileName}`),
+        result.code.replace(/\.\.\/utils\//g, './utils/'),
       );
     },
   );
+}
+
+function build() {
+  const filesToTransform = fs
+    .readdirSync(path.resolve(__dirname, '../src/react'))
+    .filter((fileName) => fileName[0] !== '.');
+  filesToTransform.forEach(transformFile);
 }
 
 build();

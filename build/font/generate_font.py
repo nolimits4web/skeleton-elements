@@ -8,7 +8,7 @@ import copy
 
 SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
 SQUARE_PATH = os.path.join(SCRIPT_PATH, 'square.svg')
-OUTPUT_FONT_DIR = os.path.join(SCRIPT_PATH, '..', 'src/font')
+OUTPUT_FONT_DIR = os.path.join(SCRIPT_PATH, '..', '..', 'src/font')
 AUTO_WIDTH = False
 KERNING = 0
 

@@ -4,7 +4,7 @@
   "description": "Skeleton elements",
   "main": "index.js",
   "scripts": {
-    "build:font": "python ./build/generate.py && ttf2woff ./src/font/skeleton.ttf ./src/font/skeleton.woff",
+    "build:font": "python ./build/font/generate.py && ttf2woff ./src/font/skeleton.ttf ./src/font/skeleton.woff",
     "build:core": "node ./build/core",
     "build:react": "node ./build/react",
     "build:vue": "node ./build/vue",

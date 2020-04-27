@@ -28,13 +28,15 @@ Object.defineProperty(exports, 'SkeletonAvatar', {
   },
 });
 
-var _skeletonBlock = _interopRequireDefault(require('./skeleton-block'));
+var _skeletonBlock = _interopRequireDefault(require('./skeleton-block.svelte'));
 
-var _skeletonText = _interopRequireDefault(require('./skeleton-text'));
+var _skeletonText = _interopRequireDefault(require('./skeleton-text.svelte'));
 
-var _skeletonImage = _interopRequireDefault(require('./skeleton-image'));
+var _skeletonImage = _interopRequireDefault(require('./skeleton-image.svelte'));
 
-var _skeletonAvatar = _interopRequireDefault(require('./skeleton-avatar'));
+var _skeletonAvatar = _interopRequireDefault(
+  require('./skeleton-avatar.svelte'),
+);
 
 function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };

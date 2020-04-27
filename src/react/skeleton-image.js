@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import multiplySvgPoints from '../utils/multiply-svg-points';
 
 const SkeletonImage = ({
