@@ -37,6 +37,7 @@ module.exports = (packageName) => {
   const files = fs
     .readdirSync(path.resolve(__dirname, '../../src'))
     .filter((fileName) => fileName.includes('.scss'));
+
   return Promise.all(
     files.map((fileName) => compileFile(packageName, fileName)),
   );
