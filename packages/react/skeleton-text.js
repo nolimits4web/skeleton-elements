@@ -119,9 +119,8 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 var SkeletonText = function SkeletonText() {
   var _ref =
-    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  var _ref$tag = _ref.tag,
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+    _ref$tag = _ref.tag,
     Tag = _ref$tag === void 0 ? 'span' : _ref$tag,
     effect = _ref.effect,
     className = _ref.className,
@@ -142,7 +141,7 @@ var SkeletonText = function SkeletonText() {
       return !!c;
     })
     .join(' ');
-  return React.createElement(
+  return /*#__PURE__*/ React.createElement(
     Tag,
     _extends(
       {

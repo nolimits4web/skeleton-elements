@@ -127,9 +127,8 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 var SkeletonImage = function SkeletonImage() {
   var _ref =
-    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  var _ref$tag = _ref.tag,
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+    _ref$tag = _ref.tag,
     Tag = _ref$tag === void 0 ? 'span' : _ref$tag,
     _ref$width = _ref.width,
     width = _ref$width === void 0 ? 1200 : _ref$width,
@@ -168,7 +167,7 @@ var SkeletonImage = function SkeletonImage() {
     return (0, _multiplySvgPoints['default'])(pointsString, 56, width, height);
   }
 
-  return React.createElement(
+  return /*#__PURE__*/ React.createElement(
     Tag,
     _extends(
       {
@@ -176,7 +175,7 @@ var SkeletonImage = function SkeletonImage() {
       },
       other,
     ),
-    React.createElement(
+    /*#__PURE__*/ React.createElement(
       'svg',
       {
         xmlns: 'http://www.w3.org/2000/svg',
@@ -185,7 +184,7 @@ var SkeletonImage = function SkeletonImage() {
         viewBox: '0 0 '.concat(width, ' ').concat(height),
         preserveAspectRatio: 'none',
       },
-      React.createElement('polygon', {
+      /*#__PURE__*/ React.createElement('polygon', {
         style: {
           fill: color,
         },
@@ -197,7 +196,7 @@ var SkeletonImage = function SkeletonImage() {
           .concat(height),
       }),
       showIcon &&
-        React.createElement('path', {
+        /*#__PURE__*/ React.createElement('path', {
           style: {
             fill: iconColor,
           },

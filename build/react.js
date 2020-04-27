@@ -1,6 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 const babel = require('@babel/core');
+const copyFonts = require('./shared/copy-fonts');
+const copyUtils = require('./shared/copy-utils');
+const copySCSS = require('./shared/copy-scss');
+const scss = require('./shared/scss');
 
 const babelOptions = {
   presets: [
@@ -32,10 +36,17 @@ function transformFile(fileName) {
 }
 
 function build() {
+  // Transform scripts
   const filesToTransform = fs
     .readdirSync(path.resolve(__dirname, '../src/react'))
     .filter((fileName) => fileName[0] !== '.');
   filesToTransform.forEach(transformFile);
+
+  // Copy fonts
+  copyFonts('react');
+  copyUtils('react');
+  copySCSS('react');
+  scss('react');
 }
 
 build();

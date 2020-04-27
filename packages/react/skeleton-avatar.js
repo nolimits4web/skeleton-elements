@@ -127,9 +127,8 @@ function _objectWithoutPropertiesLoose(source, excluded) {
 
 var SkeletonAvatar = function SkeletonAvatar() {
   var _ref =
-    arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-  var _ref$tag = _ref.tag,
+      arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+    _ref$tag = _ref.tag,
     Tag = _ref$tag === void 0 ? 'span' : _ref$tag,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? 48 : _ref$size,
@@ -168,7 +167,7 @@ var SkeletonAvatar = function SkeletonAvatar() {
     return (0, _multiplySvgPoints['default'])(pointsString, 56, size, size);
   }
 
-  return React.createElement(
+  return /*#__PURE__*/ React.createElement(
     Tag,
     _extends(
       {
@@ -176,7 +175,7 @@ var SkeletonAvatar = function SkeletonAvatar() {
       },
       other,
     ),
-    React.createElement(
+    /*#__PURE__*/ React.createElement(
       'svg',
       {
         xmlns: 'http://www.w3.org/2000/svg',
@@ -185,7 +184,7 @@ var SkeletonAvatar = function SkeletonAvatar() {
         viewBox: '0 0 '.concat(size, ' ').concat(size),
         preserveAspectRatio: 'none',
       },
-      React.createElement('rect', {
+      /*#__PURE__*/ React.createElement('rect', {
         width: size,
         height: size,
         fillRule: 'evenodd',
@@ -195,7 +194,7 @@ var SkeletonAvatar = function SkeletonAvatar() {
         rx: borderRadius,
       }),
       showIcon &&
-        React.createElement('path', {
+        /*#__PURE__*/ React.createElement('path', {
           style: {
             fill: iconColor,
           },
