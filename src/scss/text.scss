@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'skeleton';
-  src: url("./font/skeleton.woff2") format("woff2"),
-    url("./font/skeleton.woff") format("woff");
+  src: url('./font/skeleton.woff2') format('woff2'),
+    url('./font/skeleton.woff') format('woff');
   font-weight: 100, 200, 300, 400, 500, 600, 700, 800, 900;
   font-style: normal, italic;
   font-display: block;
@@ -9,7 +9,8 @@
 .skeleton-text {
   font-family: 'skeleton' !important;
   user-select: none;
-  &, & * {
+  &,
+  & * {
     color: var(--skeleton-color) !important;
     letter-spacing: -0.015em !important;
   }

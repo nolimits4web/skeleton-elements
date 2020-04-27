@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    node: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -19,7 +20,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'svelte3'],
+  plugins: ['react'],
   rules: {
     'import/no-extraneous-dependencies': 'off',
     'react/jsx-filename-extension': 'off',
@@ -27,24 +28,6 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'no-console': 'off',
   },
-  overrides: [
-    {
-      files: ['**/*.svelte'],
-      processor: 'svelte3/svelte3',
-      rules: {
-        'import/no-mutable-exports': ['off'],
-        'import/first': ['off'],
-        'import/no-unresolved': ['off'],
-        'import/no-extraneous-dependencies': ['off'],
-        'import/extensions': ['off'],
-        'no-multiple-empty-lines': ['off'],
-        'no-undef-init': ['off'],
-        'no-shadow': ['off'],
-        'no-nested-ternary': ['off'],
-        'a11y-invalid-attribute': ['off'],
-        'a11y-missing-attribute': ['off'],
-      },
-    },
-  ],
 };
