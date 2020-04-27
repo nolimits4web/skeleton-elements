@@ -4,6 +4,7 @@ import '../demo.scss';
 
 import App from './App.svelte';
 
-const app = new App({
+// eslint-disable-next-line no-new
+new App({
   target: document.getElementById('app'),
 });

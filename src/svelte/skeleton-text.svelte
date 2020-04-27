@@ -18,12 +18,12 @@
 <script>
   export let tag = 'span';
   export let effect = undefined;
-  
+
   let className = undefined;
   export { className as class };
 
   const rest = {};
-  
+
   $: Object.keys($$props).forEach((prop) => {
     if (
       prop !== 'tag'
@@ -41,5 +41,5 @@
   ]
     .filter(c => !!c)
     .join(' ');
-  
+
 </script>

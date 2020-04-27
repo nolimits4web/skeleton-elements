@@ -17,20 +17,16 @@ const SkeletonBlock = ({
   const skeletonClassName = [
     'skeleton-block',
     effect && `skeleton-effect-${effect}`,
-    className
+    className,
   ]
-    .filter(c => !!c)
+    .filter((c) => !!c)
     .join(' ');
 
   return (
-    <Tag
-      style={skeletonStyle}
-      className={skeletonClassName}
-      {...other}
-    >
+    <Tag style={skeletonStyle} className={skeletonClassName} {...other}>
       {children}
     </Tag>
-  )
+  );
 };
 
 export default SkeletonBlock;

@@ -10,14 +10,16 @@ const SkeletonText = ({
   const skeletonClassName = [
     'skeleton-text',
     effect && `skeleton-effect-${effect}`,
-    className
+    className,
   ]
-    .filter(c => !!c)
+    .filter((c) => !!c)
     .join(' ');
 
   return (
-    <Tag className={skeletonClassName} {...other}>{children}</Tag>
-  )
+    <Tag className={skeletonClassName} {...other}>
+      {children}
+    </Tag>
+  );
 };
 
 export default SkeletonText;

@@ -21,7 +21,7 @@
 
   export let tag = 'div';
   export let effect = undefined;
-  
+
   export let style = undefined;
   let className = undefined;
   export { className as class };
@@ -51,5 +51,5 @@
   ]
     .filter(c => !!c)
     .join(' ');
-  
+
 </script>

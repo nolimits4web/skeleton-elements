@@ -54,9 +54,12 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             presets: [
-              ['@babel/preset-env', {
-                modules: false,
-              }],
+              [
+                '@babel/preset-env',
+                {
+                  modules: false,
+                },
+              ],
             ],
             plugins: [
               '@babel/plugin-transform-runtime',
@@ -64,10 +67,7 @@ module.exports = {
             ],
           },
         },
-        include: [
-          resolvePath('src'),
-          resolvePath('demo'),
-        ],
+        include: [resolvePath('src'), resolvePath('demo')],
       },
       {
         test: /\.svelte$/,
@@ -80,27 +80,17 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
       {
         test: /\.(sa|sc)ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'file-loader',
         options: {
           name: 'images/[name].[hash:6].[ext]',
-
         },
       },
       {
@@ -108,7 +98,6 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: 'media/[name].[hash:6].[ext]',
-
         },
       },
       {
@@ -116,7 +105,6 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: 'fonts/[name].[hash:6].[ext]',
-
         },
       },
     ],
@@ -136,14 +124,17 @@ module.exports = {
       filename: './index.html',
       template: './demo/svelte/index.html',
       inject: true,
-      minify: env === 'production' ? {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-      } : false,
+      minify:
+        env === 'production'
+          ? {
+              collapseWhitespace: true,
+              removeComments: true,
+              removeRedundantAttributes: true,
+              removeScriptTypeAttributes: true,
+              removeStyleLinkTypeAttributes: true,
+              useShortDoctype: true,
+            }
+          : false,
     }),
     new CopyWebpackPlugin([
       {
