@@ -15,7 +15,7 @@
     "demo:vue": "cross-env NODE_ENV=development webpack-dev-server --config ./demo/webpack-vue.config.js",
     "demo:svelte": "cross-env NODE_ENV=development webpack-dev-server --config ./demo/webpack-svelte.config.js",
     "lint": "eslint --ext .js,.ts,.tsx .",
-    "prettier": "prettier --ignore-path .gitignore \"**/*.+(js|json|scss)\"",
+    "prettier": "prettier \"**/*.+(js|json|scss)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
     "validate": "npm-run-all --parallel check-format lint build"
