@@ -1,5 +1,5 @@
-import SkeletonBlock from './esm/SkeletonBlock.svelte';
-import SkeletonText from './esm/SkeletonText.svelte';
-import SkeletonImage from './esm/SkeletonImage.svelte';
-import SkeletonAvatar from './esm/SkeletonAvatar.svelte';
+import SkeletonBlock from './esm/SkeletonBlock';
+import SkeletonText from './esm/SkeletonText';
+import SkeletonImage from './esm/SkeletonImage';
+import SkeletonAvatar from './esm/SkeletonAvatar';
 export { SkeletonBlock, SkeletonText, SkeletonImage, SkeletonAvatar };

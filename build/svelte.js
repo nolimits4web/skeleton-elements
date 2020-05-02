@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const svelte = require('svelte/compiler');
 const babel = require('@babel/core');
 const copyFonts = require('./shared/copy-fonts');
 const copySCSS = require('./shared/copy-scss');
@@ -28,8 +29,30 @@ function transformFile(fileName, modules, isUtils) {
     __dirname,
     fileName === 'index.js'
       ? `../packages/svelte/${fileName.replace('.js', `.${moduleType}.js`)}`
-      : `../packages/svelte/${moduleType}/${fileName}`,
+      : `../packages/svelte/${moduleType}/${fileName}`.replace(
+          '.svelte',
+          '.js',
+        ),
   );
+  if (fileName.indexOf('.svelte') >= 0) {
+    let fileContent = fs.readFileSync(input, 'utf8');
+    const svelteResult = svelte.compile(fileContent, {
+      format: 'esm',
+      filename: fileName,
+    });
+    return babel.transform(
+      svelteResult.js.code,
+      babelOptions(modules),
+      (err, result) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        fileContent = result.code.replace(/\.\.\/utils\//g, './');
+        fs.writeFileSync(path.resolve(output), fileContent);
+      },
+    );
+  }
   return babel.transformFile(input, babelOptions(modules), (err, result) => {
     if (err) {
       console.error(err);
@@ -37,10 +60,9 @@ function transformFile(fileName, modules, isUtils) {
     }
     let fileContent = result.code.replace(/\.\.\/utils\//g, './');
     if (fileName.indexOf('index') >= 0) {
-      fileContent = fileContent.replace(
-        /\.\/Skeleton/g,
-        `./${moduleType}/Skeleton`,
-      );
+      fileContent = fileContent
+        .replace(/\.\/Skeleton/g, `./${moduleType}/Skeleton`)
+        .replace(/.svelte/g, '');
     }
     fs.writeFileSync(path.resolve(output), fileContent);
   });
