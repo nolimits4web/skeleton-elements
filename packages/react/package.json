@@ -1,0 +1,19 @@
+{
+  "name": "@skeleton-elements/react",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.cjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolimits4web/skeleton-elements.git"
+  },
+  "author": "Vladimir Kharlampidi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nolimits4web/skeleton-elements/issues"
+  },
+  "homepage": "https://github.com/nolimits4web/skeleton-elements#readme"
+}

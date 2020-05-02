@@ -1,39 +1,71 @@
 const fs = require('fs');
 const path = require('path');
 const babel = require('@babel/core');
+const copyFonts = require('./shared/copy-fonts');
+const copySCSS = require('./shared/copy-scss');
+const scss = require('./shared/scss');
 
-const babelOptions = {
+const babelOptions = (modules) => ({
   presets: [
     [
       '@babel/preset-env',
       {
-        modules: 'commonjs',
+        modules,
+        loose: true,
       },
     ],
   ],
-};
+  plugins: ['@babel/plugin-transform-runtime'],
+});
 
-function transformFile(fileName) {
-  const file = path.resolve(__dirname, `../src/svelte/${fileName}`);
-  const dest = path.resolve(__dirname, `../packages/svelte/${fileName}`);
-  if (!fileName.includes('.svelte')) {
-    babel.transformFile(file, babelOptions, (err, result) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      fs.writeFileSync(dest, result.code.replace(/\.\.\/utils\//g, './utils/'));
-    });
-  } else {
-    fs.copyFileSync(file, dest);
-  }
+function transformFile(fileName, modules, isUtils) {
+  const moduleType = modules ? 'cjs' : 'esm';
+  const input = path.resolve(
+    __dirname,
+    isUtils ? `../src/utils/${fileName}` : `../src/svelte/${fileName}`,
+  );
+  const output = path.resolve(
+    __dirname,
+    fileName === 'index.js'
+      ? `../packages/svelte/${fileName.replace('.js', `.${moduleType}.js`)}`
+      : `../packages/svelte/${moduleType}/${fileName}`,
+  );
+  return babel.transformFile(input, babelOptions(modules), (err, result) => {
+    if (err) {
+      console.error(err);
+      return;
+    }
+    let fileContent = result.code.replace(/\.\.\/utils\//g, './');
+    if (fileName.indexOf('index') >= 0) {
+      fileContent = fileContent.replace(
+        /\.\/Skeleton/g,
+        `./${moduleType}/Skeleton`,
+      );
+    }
+    fs.writeFileSync(path.resolve(output), fileContent);
+  });
 }
 
 function build() {
+  // Transform scripts
   const filesToTransform = fs
     .readdirSync(path.resolve(__dirname, '../src/svelte'))
     .filter((fileName) => fileName[0] !== '.');
-  filesToTransform.forEach(transformFile);
+
+  const utils = fs
+    .readdirSync(path.resolve(__dirname, '../src/utils'))
+    .filter((fileName) => fileName[0] !== '.');
+
+  filesToTransform.forEach((file) => transformFile(file, 'commonjs'));
+  filesToTransform.forEach((file) => transformFile(file, false));
+
+  utils.forEach((file) => transformFile(file, 'commonjs', true));
+  utils.forEach((file) => transformFile(file, false, true));
+
+  // Copy fonts
+  copyFonts('svelte');
+  copySCSS('svelte');
+  scss('svelte');
 }
 
 build();

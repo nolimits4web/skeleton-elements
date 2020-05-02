@@ -1,0 +1,13 @@
+:root {
+  --skeleton-color: #ccc;
+  --skeleton-icon-color: rgba(0, 0, 0, 0.25); }
+
+.skeleton-image {
+  display: inline-block; }
+  .skeleton-image svg {
+    width: 100%;
+    height: auto; }
+  .skeleton-image polygon {
+    fill: var(--skeleton-color); }
+  .skeleton-image path {
+    fill: var(--skeleton-icon-color); }
