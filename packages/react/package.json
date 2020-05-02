@@ -5,9 +5,6 @@
   "main": "index.cjs.js",
   "module": "index.esm.js",
   "jsnext:main": "index.esm.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nolimits4web/skeleton-elements.git"
