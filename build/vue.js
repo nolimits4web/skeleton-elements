@@ -15,7 +15,6 @@ const babelOptions = (modules) => ({
       },
     ],
   ],
-  plugins: ['@babel/plugin-transform-runtime'],
 });
 
 function transformFile(fileName, modules, isUtils) {

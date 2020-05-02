@@ -3,25 +3,18 @@ export default {
   props: {
     tag: {
       type: String,
-      default: 'span',
+      "default": 'span'
     },
-    effect: String,
+    effect: String
   },
   render: function render() {
     var _class;
 
     var h = this.$createElement;
-    return h(
-      this.tag,
-      {
-        class:
-          ((_class = {
-            'skeleton-text': true,
-          }),
-          (_class['skeleton-effect-' + this.effect] = this.effect),
-          _class),
-      },
-      [this.$slots['default']],
-    );
-  },
+    return h(this.tag, {
+      "class": (_class = {
+        'skeleton-text': true
+      }, _class["skeleton-effect-" + this.effect] = this.effect, _class)
+    }, [this.$slots["default"]]);
+  }
 };

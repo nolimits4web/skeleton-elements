@@ -7,14 +7,14 @@ function multiplySvgPoints(pointsString, iconSize, width, height) {
     coords = coords.split(',').map(function (p) {
       return parseFloat(p);
     });
-    var x = coords[0] * scale + width / 2 - (iconSize * scale) / 2;
-    var y = coords[1] * scale + height / 2 - (iconSize * scale) / 2;
+    var x = coords[0] * scale + width / 2 - iconSize * scale / 2;
+    var y = coords[1] * scale + height / 2 - iconSize * scale / 2;
 
     if (iconMaxSize >= 100) {
-      return Math.round(x) + ',' + Math.round(y);
+      return Math.round(x) + "," + Math.round(y);
     }
 
-    return x + ',' + y;
+    return x + "," + y;
   });
 }
 
