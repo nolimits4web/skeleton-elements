@@ -1,6 +1,6 @@
 {
   "name": "skeleton-elements",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Skeleton elements",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,8 @@
     "prettier": "prettier \"**/*.+(js|json|scss)\"",
     "format": "npm run prettier -- --write",
     "check-format": "npm run prettier -- --list-different",
-    "validate": "npm-run-all --parallel check-format lint build"
+    "validate": "npm-run-all --parallel check-format lint build",
+    "release": "npm run validate && node ./build/release"
   },
   "repository": {
     "type": "git",

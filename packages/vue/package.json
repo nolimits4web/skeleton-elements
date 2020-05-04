@@ -5,6 +5,7 @@
   "main": "index.cjs.js",
   "module": "index.esm.js",
   "jsnext:main": "index.esm.js",
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nolimits4web/skeleton-elements.git"

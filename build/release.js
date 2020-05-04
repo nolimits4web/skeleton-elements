@@ -41,10 +41,7 @@ async function release() {
 
   projects.forEach((project) => {
     // eslint-disable-next-line
-    const subPkg = require(path.relative(
-      __dirname,
-      `../packages/${project}/package.json`,
-    ));
+    const subPkg = require(`../packages/${project}/package.json`);
     subPkg.version = options.version;
     fs.writeFileSync(
       path.resolve(__dirname, `../packages/${project}/package.json`),
