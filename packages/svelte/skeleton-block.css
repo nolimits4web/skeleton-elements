@@ -1,9 +1,0 @@
-:root {
-  --skeleton-color: #ccc;
-  --skeleton-icon-color: rgba(0, 0, 0, 0.25); }
-
-.skeleton-block {
-  height: 1em;
-  background: var(--skeleton-color) !important;
-  width: 100%;
-  display: block; }

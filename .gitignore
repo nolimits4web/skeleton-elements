@@ -33,3 +33,16 @@ node_modules/
 # Misc
 .DS_Store
 Thumbs.db
+
+packages/core
+!packages/core/package.json
+!packages/core/README.md
+packages/react
+!packages/react/package.json
+!packages/react/README.md
+packages/svelte
+!packages/svelte/package.json
+!packages/svelte/README.md
+packages/vue
+!packages/vue/package.json
+!packages/vue/README.md
