@@ -1,11 +1,22 @@
 {
   "name": "@skeleton-elements/react",
   "version": "0.3.0",
-  "description": "",
+  "description": "Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are representations of UI that will be available (loaded) soon. They are designed to improve perceived performance.",
   "main": "index.cjs.js",
   "module": "index.esm.js",
   "jsnext:main": "index.esm.js",
   "sideEffects": false,
+  "keywords": [
+    "skeleton",
+    "ghost",
+    "lazy",
+    "lazy-loading",
+    "loader",
+    "placeholder",
+    "performance",
+    "react",
+    "reactjs"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nolimits4web/skeleton-elements.git"

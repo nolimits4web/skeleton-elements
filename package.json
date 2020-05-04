@@ -1,7 +1,7 @@
 {
   "name": "skeleton-elements",
   "version": "0.3.0",
-  "description": "Skeleton elements",
+  "description": "Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are representations of UI that will be available (loaded) soon. They are designed to improve perceived performance.",
   "main": "index.js",
   "scripts": {
     "build:font": "python ./build/font/generate.py && ttf2woff ./src/fonst/skeleton.ttf ./src/fonts/skeleton.woff",
@@ -27,7 +27,12 @@
   },
   "keywords": [
     "skeleton",
-    "ghost"
+    "ghost",
+    "lazy",
+    "lazy-loading",
+    "loader",
+    "placeholder",
+    "performance"
   ],
   "author": "Vladimir Kharlampidi",
   "license": "MIT",
