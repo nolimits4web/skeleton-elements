@@ -9,7 +9,9 @@ function compileFile(packageName, fileName) {
     const src = path.resolve(__dirname, `../../src/${fileName}`);
     const output = path.resolve(
       __dirname,
-      `../../packages/${packageName}/${fileName.replace('.scss', '.css')}`,
+      `../../packages/${packageName}/${fileName
+        .replace('skeleton-elements-core', 'skeleton-elements')
+        .replace('.scss', '.css')}`,
     );
     sass.render({ file: src }, (sassErr, sassResult) => {
       if (sassErr) {
@@ -34,9 +36,21 @@ function compileFile(packageName, fileName) {
 }
 
 module.exports = (packageName) => {
-  const files = fs
+  let files = fs
     .readdirSync(path.resolve(__dirname, '../../src'))
     .filter((fileName) => fileName.includes('.scss'));
+  if (packageName === 'core') {
+    files = files.filter(
+      (fileName) =>
+        fileName.indexOf('image') < 0 &&
+        fileName.indexOf('avatar') < 0 &&
+        fileName.indexOf('skeleton-elements.scss') < 0,
+    );
+  } else {
+    files = files.filter(
+      (fileName) => fileName.indexOf('skeleton-elements-core.scss') < 0,
+    );
+  }
 
   return Promise.all(
     files.map((fileName) => compileFile(packageName, fileName)),
