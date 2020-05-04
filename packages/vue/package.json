@@ -1,0 +1,18 @@
+{
+  "name": "@skeleton-elements/vue",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.cjs.js",
+  "module": "index.esm.js",
+  "jsnext:main": "index.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolimits4web/skeleton-elements.git"
+  },
+  "author": "Vladimir Kharlampidi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nolimits4web/skeleton-elements/issues"
+  },
+  "homepage": "https://github.com/nolimits4web/skeleton-elements#readme"
+}

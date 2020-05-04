@@ -1,0 +1,16 @@
+{
+  "name": "@skeleton-elements/core",
+  "version": "0.1.0",
+  "description": "",
+  "main": "skeleton-elements.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nolimits4web/skeleton-elements.git"
+  },
+  "author": "Vladimir Kharlampidi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nolimits4web/skeleton-elements/issues"
+  },
+  "homepage": "https://github.com/nolimits4web/skeleton-elements#readme"
+}
