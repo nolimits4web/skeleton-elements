@@ -60,21 +60,26 @@ See the [documentation]() for more examples and API documentation.
 
 ```jsx
 import React, { useState } from 'react';
+
+// import Skeleton components
 import { SkeletonAvatar, SkeletonText } from '@skeleton-elements/react';
+
+// import Skeleton styles
+import '@skeleton-elements/react/skeleton-elements.css';
 
 const App = () => {
   const [ loading, setLoading ] = useState(true);
   // ...
   return (
     <div id="app">
-      { /*... */ }
+      ...
       {loading && (
-        <div class="user">
-          <div class="user-avatar">
-            <SkeletonAvatar size={120} />
+        <div className="user">
+          <div className="user-avatar">
+            <SkeletonAvatar effect="fade" size={120} />
           </div>
-          <div class="user-name">
-            <SkeletonText>John Doe</SkeletonText>
+          <div className="user-name">
+            <SkeletonText effect="fade">John Doe</SkeletonText>
           </div>
         </div>
       )}
@@ -88,7 +93,7 @@ export default App;
 
 ## Contribution
 
-Yes please! See the [contributing guidelines]() for details.
+Yes please! See the [contributing guidelines](https://github.com/nolimits4web/skeleton-elements/blob/master/CONTRIBUTING.md) for details.
 
 ## Licence
 
