@@ -47,7 +47,7 @@ Or it can be included for each component separately:
 
 ## Components
 
-There are following elements are available:
+The following components are available:
 
 * `SkeletonAvatar` - responsive avatar placeholder
 * `SkeletonBlock` - block placeholder
