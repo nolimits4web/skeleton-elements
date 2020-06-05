@@ -1,6 +1,6 @@
 # Skeleton Elements
 
-Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are basically "grey box" representations of UI that will be available (loaded) soon. They are designed to improve perceived performance.
+Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) - UI for improved perceived performance
 
 - [Documentation](#documentation)
 - [Packages](#packages)
@@ -9,7 +9,7 @@ Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are basic
 
 ## Documentation
 
-See the [documentation]() with examples and API documentation.
+See the [documentation](https://skeleton-elements.dev) with examples and API documentation.
 
 ## Packages
 

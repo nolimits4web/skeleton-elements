@@ -1,6 +1,6 @@
 # Skeleton Elements React
 
-Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are basically "grey box" representations of UI that will be available (loaded) soon. They are designed to improve perceived performance.
+Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) - UI for improved perceived performance
 
 * [Documentation](#documentation)
 * [Installation](#installation)
@@ -66,7 +66,7 @@ The following components are available:
 
 ## Usage
 
-See the [documentation]() for more examples and API documentation.
+See the [documentation](https://skeleton-elements.dev/react/) with examples and API documentation.
 
 ```jsx
 import React, { useState } from 'react';
