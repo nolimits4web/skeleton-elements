@@ -10,13 +10,6 @@ module.exports = (packageName) => {
   }
   const files = fs.readdirSync(srcDir);
   files.forEach((fileName) => {
-    if (
-      packageName === 'core' &&
-      (fileName.indexOf('image') >= 0 || fileName.indexOf('avatar') >= 0)
-    ) {
-      return;
-    }
-
     fs.copyFileSync(path.join(srcDir, fileName), path.join(destDir, fileName));
   });
 

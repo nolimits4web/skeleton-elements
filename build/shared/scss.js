@@ -36,21 +36,9 @@ function compileFile(packageName, fileName) {
 }
 
 module.exports = (packageName) => {
-  let files = fs
+  const files = fs
     .readdirSync(path.resolve(__dirname, '../../src'))
     .filter((fileName) => fileName.includes('.scss'));
-  if (packageName === 'core') {
-    files = files.filter(
-      (fileName) =>
-        fileName.indexOf('image') < 0 &&
-        fileName.indexOf('avatar') < 0 &&
-        fileName.indexOf('skeleton-elements.scss') < 0,
-    );
-  } else {
-    files = files.filter(
-      (fileName) => fileName.indexOf('skeleton-elements-core.scss') < 0,
-    );
-  }
 
   return Promise.all(
     files.map((fileName) => compileFile(packageName, fileName)),
