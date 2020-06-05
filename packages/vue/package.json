@@ -1,6 +1,6 @@
 {
   "name": "@skeleton-elements/vue",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are representations of UI that will be available (loaded) soon. They are designed to improve perceived performance.",
   "main": "index.cjs.js",
   "module": "index.esm.js",

@@ -9,14 +9,14 @@ interface SkeletonBlockOptions extends React.HTMLAttributes<HTMLElement> {
   tag: string;
 
   /**
-   * Block CSS width
+   * Avatar block CSS width
    *
    * @default undefined
    */
   width: string;
 
   /**
-   * Block CSS height
+   * Avatar block CSS height
    *
    * @default undefined
    */
