@@ -39,20 +39,23 @@ function transformFile(fileName, modules, isUtils) {
       format: 'esm',
       filename: fileName,
     });
-    return babel.transform(
-      svelteResult.js.code,
-      babelOptions(modules),
-      (err, result) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        fileContent = result.code.replace(/\.\.\/utils\//g, './');
-        fs.writeFileSync(path.resolve(output), fileContent);
-      },
-    );
+    fileContent = svelteResult.js.code.replace(/\.\.\/utils\//g, './');
+    fs.writeFileSync(path.resolve(output), fileContent);
+    // return babel.transform(
+    //   svelteResult.js.code,
+    //   babelOptions(modules),
+    //   (err, result) => {
+    //     if (err) {
+    //       console.error(err);
+    //       return;
+    //     }
+    //     fileContent = result.code.replace(/\.\.\/utils\//g, './');
+    //     fs.writeFileSync(path.resolve(output), fileContent);
+    //   },
+    // );
+    return;
   }
-  return babel.transformFile(input, babelOptions(modules), (err, result) => {
+  babel.transformFile(input, babelOptions(modules), (err, result) => {
     if (err) {
       console.error(err);
       return;

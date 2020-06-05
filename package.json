@@ -79,7 +79,7 @@
     "rimraf": "^3.0.2",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.0",
-    "svelte": "^3.21.0",
+    "svelte": "^3.23.0",
     "svelte-loader": "^2.13.6",
     "ttf2woff": "^2.0.1",
     "vue": "^2.6.11",
