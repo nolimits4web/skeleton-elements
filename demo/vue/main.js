@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 
 import 'normalize.css';
 import '../../src/skeleton-elements.scss';
@@ -6,8 +6,6 @@ import '../demo.scss';
 
 import App from './App.vue';
 
-// eslint-disable-next-line no-new
-new Vue({
-  el: '#app',
-  render: (h) => h(App),
-});
+const app = createApp(App);
+
+app.mount('#app');

@@ -1,3 +1,5 @@
+import { h } from 'vue';
+
 export default {
   name: 'skeleton-text',
   props: {
@@ -8,7 +10,6 @@ export default {
     effect: String,
   },
   render() {
-    const h = this.$createElement;
     return h(
       this.tag,
       {
@@ -17,7 +18,7 @@ export default {
           [`skeleton-effect-${this.effect}`]: this.effect,
         },
       },
-      [this.$slots.default],
+      this.$slots.default && this.$slots.default(),
     );
   },
 };

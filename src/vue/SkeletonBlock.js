@@ -1,3 +1,5 @@
+import { h } from 'vue';
+
 export default {
   name: 'skeleton-block',
   props: {
@@ -10,7 +12,6 @@ export default {
     effect: String,
   },
   render() {
-    const h = this.$createElement;
     return h(
       this.tag,
       {
@@ -23,7 +24,7 @@ export default {
           height: this.height,
         },
       },
-      [this.$slots.default],
+      this.$slots.default && this.$slots.default(),
     );
   },
 };
