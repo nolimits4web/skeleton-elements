@@ -1,6 +1,6 @@
 {
   "name": "@skeleton-elements/core",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are representations of UI that will be available (loaded) soon. They are designed to improve perceived performance.",
   "main": "skeleton-elements.css",
   "repository": {
