@@ -11,7 +11,7 @@ Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) - UI for 
 
 ## Documentation
 
-See the [documentation](https://skeleton-elements.dev/core/) with examples and API documentation.
+See the [documentation](https://skeleton-elements.dev/) with examples and API documentation.
 
 ## Installation
 
@@ -52,7 +52,7 @@ Or it can be included for each component separately:
 
 ## Usage
 
-See the [documentation]() for more examples and API documentation.
+See the [documentation](https://skeleton-elements.dev) for more examples and API documentation.
 
 ```html
 <style>

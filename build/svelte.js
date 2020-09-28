@@ -2,9 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const svelte = require('svelte/compiler');
 const babel = require('@babel/core');
-const copyFonts = require('./shared/copy-fonts');
-const copySCSS = require('./shared/copy-scss');
-const scss = require('./shared/scss');
 
 const babelOptions = (modules) => ({
   presets: [
@@ -27,11 +24,8 @@ function transformFile(fileName, modules, isUtils) {
   const output = path.resolve(
     __dirname,
     fileName === 'index.js'
-      ? `../packages/svelte/${fileName.replace('.js', `.${moduleType}.js`)}`
-      : `../packages/svelte/${moduleType}/${fileName}`.replace(
-          '.svelte',
-          '.js',
-        ),
+      ? `../package/svelte/${fileName.replace('.js', `.${moduleType}.js`)}`
+      : `../package/svelte/${moduleType}/${fileName}`.replace('.svelte', '.js'),
   );
   if (fileName.indexOf('.svelte') >= 0) {
     let fileContent = fs.readFileSync(input, 'utf8');
@@ -41,18 +35,6 @@ function transformFile(fileName, modules, isUtils) {
     });
     fileContent = svelteResult.js.code.replace(/\.\.\/utils\//g, './');
     fs.writeFileSync(path.resolve(output), fileContent);
-    // return babel.transform(
-    //   svelteResult.js.code,
-    //   babelOptions(modules),
-    //   (err, result) => {
-    //     if (err) {
-    //       console.error(err);
-    //       return;
-    //     }
-    //     fileContent = result.code.replace(/\.\.\/utils\//g, './');
-    //     fs.writeFileSync(path.resolve(output), fileContent);
-    //   },
-    // );
     return;
   }
   babel.transformFile(input, babelOptions(modules), (err, result) => {
@@ -85,11 +67,6 @@ function build() {
 
   utils.forEach((file) => transformFile(file, 'commonjs', true));
   utils.forEach((file) => transformFile(file, false, true));
-
-  // Copy fonts
-  copyFonts('svelte');
-  copySCSS('svelte');
-  scss('svelte');
 }
 
 build();

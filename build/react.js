@@ -1,9 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const babel = require('@babel/core');
-const copyFonts = require('./shared/copy-fonts');
-const copySCSS = require('./shared/copy-scss');
-const scss = require('./shared/scss');
 
 const babelOptions = (modules) => ({
   presets: [
@@ -27,8 +24,8 @@ function transformFile(fileName, modules, isUtils) {
   const output = path.resolve(
     __dirname,
     fileName === 'index.js'
-      ? `../packages/react/${fileName.replace('.js', `.${moduleType}.js`)}`
-      : `../packages/react/${moduleType}/${fileName}`,
+      ? `../package/react/${fileName.replace('.js', `.${moduleType}.js`)}`
+      : `../package/react/${moduleType}/${fileName}`,
   );
   return babel.transformFile(input, babelOptions(modules), (err, result) => {
     if (err) {
@@ -75,18 +72,13 @@ function build() {
   types.forEach((typeFile) => {
     fs.copyFileSync(
       path.resolve(__dirname, '../src/react', typeFile),
-      path.resolve(__dirname, '../packages/react/types', typeFile),
+      path.resolve(__dirname, '../package/react/types', typeFile),
     );
   });
   fs.copyFileSync(
     path.resolve(__dirname, '../src/react', 'index.d.ts'),
-    path.resolve(__dirname, '../packages/react', 'index.d.ts'),
+    path.resolve(__dirname, '../package/react', 'index.d.ts'),
   );
-
-  // Copy fonts
-  copyFonts('react');
-  copySCSS('react');
-  scss('react');
 }
 
 build();

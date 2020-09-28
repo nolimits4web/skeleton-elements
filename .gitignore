@@ -34,10 +34,10 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-packages/**/*.js
-packages/**/*.ts
-packages/**/*.css
-packages/**/*.scss
-packages/**/*.ttf
-packages/**/*.woff
-packages/**/*.woff2
+package/**/*.js
+package/**/*.ts
+package/**/*.css
+package/**/*.scss
+package/**/*.ttf
+package/**/*.woff
+package/**/*.woff2

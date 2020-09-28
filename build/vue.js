@@ -1,9 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const babel = require('@babel/core');
-const copyFonts = require('./shared/copy-fonts');
-const copySCSS = require('./shared/copy-scss');
-const scss = require('./shared/scss');
 
 const babelOptions = (modules) => ({
   presets: [
@@ -26,8 +23,8 @@ function transformFile(fileName, modules, isUtils) {
   const output = path.resolve(
     __dirname,
     fileName === 'index.js'
-      ? `../packages/vue/${fileName.replace('.js', `.${moduleType}.js`)}`
-      : `../packages/vue/${moduleType}/${fileName}`,
+      ? `../package/vue/${fileName.replace('.js', `.${moduleType}.js`)}`
+      : `../package/vue/${moduleType}/${fileName}`,
   );
   return babel.transformFile(input, babelOptions(modules), (err, result) => {
     if (err) {
@@ -60,11 +57,6 @@ function build() {
 
   utils.forEach((file) => transformFile(file, 'commonjs', true));
   utils.forEach((file) => transformFile(file, false, true));
-
-  // Copy fonts
-  copyFonts('vue');
-  copySCSS('vue');
-  scss('vue');
 }
 
 build();

@@ -4,12 +4,12 @@ const sass = require('node-sass');
 const postcss = require('postcss');
 const autoprefixer = require('autoprefixer');
 
-function compileFile(packageName, fileName) {
+function compileFile(fileName) {
   return new Promise((resolve, reject) => {
     const src = path.resolve(__dirname, `../../src/${fileName}`);
     const output = path.resolve(
       __dirname,
-      `../../packages/${packageName}/${fileName
+      `../../package/${fileName
         .replace('skeleton-elements-core', 'skeleton-elements')
         .replace('.scss', '.css')}`,
     );
@@ -35,12 +35,10 @@ function compileFile(packageName, fileName) {
   });
 }
 
-module.exports = (packageName) => {
+module.exports = () => {
   const files = fs
     .readdirSync(path.resolve(__dirname, '../../src'))
     .filter((fileName) => fileName.includes('.scss'));
 
-  return Promise.all(
-    files.map((fileName) => compileFile(packageName, fileName)),
-  );
+  return Promise.all(files.map((fileName) => compileFile(fileName)));
 };

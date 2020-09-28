@@ -1,5 +1,9 @@
 # Change Log
 
+## 3.0.0
+
+- Moved to single NPM `skeleton-elements` package
+
 ## 2.0.0
 
 - Vue.js components reworked for new Vue.js v3

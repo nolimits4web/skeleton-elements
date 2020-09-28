@@ -1,0 +1,9 @@
+{
+  "name": "skeleton-elements/vue",
+  "private": true,
+  "main": "index.cjs.js",
+  "module": "index.esm.js",
+  "jsnext:main": "index.esm.js",
+  "typings": "index.d.js",
+  "sideEffects": false
+}

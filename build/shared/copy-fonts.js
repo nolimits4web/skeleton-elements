@@ -1,12 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = (packageName) => {
+module.exports = () => {
   const srcDir = path.resolve(__dirname, '../../src/fonts');
-  const destDir = path.resolve(
-    __dirname,
-    `../../packages/${packageName}/fonts`,
-  );
+  const destDir = path.resolve(__dirname, `../../package/fonts`);
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir, { recursive: true });
   }

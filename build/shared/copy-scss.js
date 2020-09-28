@@ -1,10 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = (packageName) => {
+module.exports = () => {
   // copy sub modules
   const srcDir = path.resolve(__dirname, '../../src/scss');
-  const destDir = path.resolve(__dirname, `../../packages/${packageName}/scss`);
+  const destDir = path.resolve(__dirname, `../../package/scss`);
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir, { recursive: true });
   }
@@ -15,7 +15,7 @@ module.exports = (packageName) => {
 
   // copy root modules
   const srcDirRoot = path.resolve(__dirname, '../../src');
-  const destDirRoot = path.resolve(__dirname, `../../packages/${packageName}`);
+  const destDirRoot = path.resolve(__dirname, `../../package/`);
   const filesRoot = fs
     .readdirSync(srcDirRoot)
     .filter((fileName) => fileName.includes('.scss'));

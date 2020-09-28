@@ -5,8 +5,6 @@ const fs = require('fs');
 const path = require('path');
 const pkg = require('../package.json');
 
-const projects = ['core', 'react', 'svelte', 'vue'];
-
 async function release() {
   const options = await inquirer.prompt([
     {
@@ -39,15 +37,13 @@ async function release() {
     JSON.stringify(pkg, null, 2),
   );
 
-  projects.forEach((project) => {
-    // eslint-disable-next-line
-    const subPkg = require(`../packages/${project}/package.json`);
-    subPkg.version = options.version;
-    fs.writeFileSync(
-      path.resolve(__dirname, `../packages/${project}/package.json`),
-      JSON.stringify(subPkg, null, 2),
-    );
-  });
+  // eslint-disable-next-line
+  const subPkg = require(`../package/package.json`);
+  subPkg.version = options.version;
+  fs.writeFileSync(
+    path.resolve(__dirname, `../package/package.json`),
+    JSON.stringify(subPkg, null, 2),
+  );
 
   await exec.promise('git pull');
   await exec.promise('npm i');
@@ -58,16 +54,10 @@ async function release() {
   await exec.promise('git push origin --tags');
 
   // eslint-disable-next-line
-  for (let project of projects) {
-    if (options.beta) {
-      await exec.promise(
-        `cd packages/${project} && npm publish --tag beta --access public`,
-      );
-    } else {
-      await exec.promise(
-        `cd packages/${project} && npm publish --access public`,
-      );
-    }
+  if (options.beta) {
+    await exec.promise(`cd package && npm publish --tag beta --access public`);
+  } else {
+    await exec.promise(`cd package && npm publish --access public`);
   }
 }
 

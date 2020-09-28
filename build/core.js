@@ -4,9 +4,9 @@ const scss = require('./shared/scss');
 
 function build() {
   // Copy fonts
-  copyFonts('core');
-  copySCSS('core');
-  scss('core');
+  copyFonts();
+  copySCSS();
+  scss();
 }
 
 build();
