@@ -19,7 +19,7 @@ See the [documentation]() with examples and API documentation.
 With npm:
 
 ```
-npm i @skeleton-elements/react --save
+npm i skeleton-elements --save
 ```
 
 ## Styles
@@ -33,27 +33,27 @@ Skeleton Elements requires stylesheet to be included:
 Wiht bunder (like webpack) you can import syles directly from JavaScript:
 
 ```
-import '@skeleton-elements/react/skeleton-elements.css';
+import 'skeleton-elements/skeleton-elements.css';
 ```
 
 Or it can be included for each component separately:
 
-* `@skeleton-elements/react/skeleton-avatar.css` - Avatar component
-* `@skeleton-elements/react/skeleton-block.css` - Block component
-* `@skeleton-elements/react/skeleton-image.css` - Image component
-* `@skeleton-elements/react/skeleton-text.css` - Text component
-* `@skeleton-elements/react/skeleton-effects.css` - Effects
+* `skeleton-elements/skeleton-avatar.css` - Avatar component
+* `skeleton-elements/skeleton-block.css` - Block component
+* `skeleton-elements/skeleton-image.css` - Image component
+* `skeleton-elements/skeleton-text.css` - Text component
+* `skeleton-elements/skeleton-effects.css` - Effects
 
 ### SCSS
 
 `SCSS` styles are also included:
 
-* `@skeleton-elements/react/skeleton-elements.scss` - All styles
-* `@skeleton-elements/react/skeleton-avatar.scss` - Avatar component
-* `@skeleton-elements/react/skeleton-block.scss` - Block component
-* `@skeleton-elements/react/skeleton-image.scss` - Image component
-* `@skeleton-elements/react/skeleton-text.scss` - Text component
-* `@skeleton-elements/react/skeleton-effects.scss` - Effects
+* `skeleton-elements/skeleton-elements.scss` - All styles
+* `skeleton-elements/skeleton-avatar.scss` - Avatar component
+* `skeleton-elements/skeleton-block.scss` - Block component
+* `skeleton-elements/skeleton-image.scss` - Image component
+* `skeleton-elements/skeleton-text.scss` - Text component
+* `skeleton-elements/skeleton-effects.scss` - Effects
 
 ## Components
 
@@ -72,10 +72,10 @@ See the [documentation](https://skeleton-elements.dev/react/) with examples and 
 import React, { useState } from 'react';
 
 // import Skeleton components
-import { SkeletonAvatar, SkeletonText } from '@skeleton-elements/react';
+import { SkeletonAvatar, SkeletonText } from 'skeleton-elements/react';
 
 // import Skeleton styles
-import '@skeleton-elements/react/skeleton-elements.css';
+import 'skeleton-elements/skeleton-elements.css';
 
 const App = () => {
   const [ loading, setLoading ] = useState(true);

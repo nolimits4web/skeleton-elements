@@ -19,7 +19,7 @@ See the [documentation](https://skeleton-elements.dev/svelte/) with examples and
 With npm:
 
 ```
-npm i @skeleton-elements/svelte --save
+npm i skeleton-elements --save
 ```
 
 ## Styles
@@ -33,27 +33,27 @@ Skeleton Elements requires stylesheet to be included:
 Wiht bunder (like webpack) you can import syles directly from JavaScript:
 
 ```
-import '@skeleton-elements/svelte/skeleton-elements.css';
+import 'skeleton-elements/skeleton-elements.css';
 ```
 
 Or it can be included for each component separately:
 
-* `@skeleton-elements/svelte/skeleton-avatar.css` - Avatar component
-* `@skeleton-elements/svelte/skeleton-block.css` - Block component
-* `@skeleton-elements/svelte/skeleton-image.css` - Image component
-* `@skeleton-elements/svelte/skeleton-text.css` - Text component
-* `@skeleton-elements/svelte/skeleton-effects.css` - Effects
+* `skeleton-elements/skeleton-avatar.css` - Avatar component
+* `skeleton-elements/skeleton-block.css` - Block component
+* `skeleton-elements/skeleton-image.css` - Image component
+* `skeleton-elements/skeleton-text.css` - Text component
+* `skeleton-elements/skeleton-effects.css` - Effects
 
 ### SCSS
 
 `SCSS` styles are also included:
 
-* `@skeleton-elements/svelte/skeleton-elements.scss` - All styles
-* `@skeleton-elements/svelte/skeleton-avatar.scss` - Avatar component
-* `@skeleton-elements/svelte/skeleton-block.scss` - Block component
-* `@skeleton-elements/svelte/skeleton-image.scss` - Image component
-* `@skeleton-elements/svelte/skeleton-text.scss` - Text component
-* `@skeleton-elements/svelte/skeleton-effects.scss` - Effects
+* `skeleton-elements/skeleton-elements.scss` - All styles
+* `skeleton-elements/skeleton-avatar.scss` - Avatar component
+* `skeleton-elements/skeleton-block.scss` - Block component
+* `skeleton-elements/skeleton-image.scss` - Image component
+* `skeleton-elements/skeleton-text.scss` - Text component
+* `skeleton-elements/skeleton-effects.scss` - Effects
 
 ## Components
 
@@ -85,10 +85,10 @@ See the [documentation]() for more examples and API documentation.
 </div>
 <script>
   // import Skeleton components
-  import { SkeletonAvatar, SkeletonText } from '@skeleton-elements/svelte';
+  import { SkeletonAvatar, SkeletonText } from 'skeleton-elements/svelte';
 
   // import Skeleton styles
-  import '@skeleton-elements/svelte/skeleton-elements.css';
+  import 'skeleton-elements/skeleton-elements.css';
 
   let loading = true;
 </script>

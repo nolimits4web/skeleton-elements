@@ -20,7 +20,7 @@ See the [documentation](https://skeleton-elements.dev/vue/) with examples and AP
 With npm:
 
 ```
-npm i @skeleton-elements/vue --save
+npm i skeleton-elements --save
 ```
 
 ## Styles
@@ -34,27 +34,27 @@ Skeleton Elements requires stylesheet to be included:
 Wiht bunder (like webpack) you can import syles directly from JavaScript:
 
 ```
-import '@skeleton-elements/vue/skeleton-elements.css';
+import 'skeleton-elements/skeleton-elements.css';
 ```
 
 Or it can be included for each component separately:
 
-* `@skeleton-elements/vue/skeleton-avatar.css` - Avatar component
-* `@skeleton-elements/vue/skeleton-block.css` - Block component
-* `@skeleton-elements/vue/skeleton-image.css` - Image component
-* `@skeleton-elements/vue/skeleton-text.css` - Text component
-* `@skeleton-elements/vue/skeleton-effects.css` - Effects
+* `skeleton-elements/skeleton-avatar.css` - Avatar component
+* `skeleton-elements/skeleton-block.css` - Block component
+* `skeleton-elements/skeleton-image.css` - Image component
+* `skeleton-elements/skeleton-text.css` - Text component
+* `skeleton-elements/skeleton-effects.css` - Effects
 
 ### SCSS
 
 `SCSS` styles are also included:
 
-* `@skeleton-elements/vue/skeleton-elements.scss` - All styles
-* `@skeleton-elements/vue/skeleton-avatar.scss` - Avatar component
-* `@skeleton-elements/vue/skeleton-block.scss` - Block component
-* `@skeleton-elements/vue/skeleton-image.scss` - Image component
-* `@skeleton-elements/vue/skeleton-text.scss` - Text component
-* `@skeleton-elements/vue/skeleton-effects.scss` - Effects
+* `skeleton-elements/skeleton-elements.scss` - All styles
+* `skeleton-elements/skeleton-avatar.scss` - Avatar component
+* `skeleton-elements/skeleton-block.scss` - Block component
+* `skeleton-elements/skeleton-image.scss` - Image component
+* `skeleton-elements/skeleton-text.scss` - Text component
+* `skeleton-elements/skeleton-effects.scss` - Effects
 
 ## Components
 
@@ -86,10 +86,10 @@ See the [documentation]() for more examples and API documentation.
 </template>
 <script>
   // import Skeleton components
-  import { SkeletonAvatar, SkeletonText } from '@skeleton-elements/vue';
+  import { SkeletonAvatar, SkeletonText } from 'skeleton-elements/vue';
 
   // import Skeleton styles
-  import '@skeleton-elements/vue/skeleton-elements.css';
+  import 'skeleton-elements/skeleton-elements.css';
 
   export default {
     // register components
