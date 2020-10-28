@@ -14,6 +14,7 @@
     "demo:react": "cross-env NODE_ENV=development webpack-dev-server --config ./demo/webpack-react.config.js",
     "demo:vue": "cross-env NODE_ENV=development webpack-dev-server --config ./demo/webpack-vue.config.js",
     "demo:svelte": "cross-env NODE_ENV=development webpack-dev-server --config ./demo/webpack-svelte.config.js",
+    "demo:angular": "ng serve demo",
     "lint": "eslint --ext .js .",
     "prettier": "prettier \"**/*.+(js|json|scss)\"",
     "format": "npm run prettier -- --write",
