@@ -1,1 +1,1 @@
-{"version":3,"file":"public-api.d.ts","sourceRoot":"D:/projects/skeleton-elements/src/angular/","sources":["public-api.ts"],"names":[],"mappings":"AAIA,cAAc,gCAAgC,CAAC;AAC/C,cAAc,+CAA+C,CAAC;AAC9D,cAAc,iDAAiD,CAAC;AAChE,cAAc,+CAA+C,CAAC;AAC9D,cAAc,6CAA6C,CAAC"}
+{"version":3,"file":"public-api.d.ts","sourceRoot":"D:/projects/skeleton-elements/src/angular/","sources":["public-api.ts"],"names":[],"mappings":"AAIA,cAAc,gCAAgC,CAAC;AAC/C,cAAc,sBAAsB,CAAC;AACrC,cAAc,uBAAuB,CAAC;AACtC,cAAc,qBAAqB,CAAC;AACpC,cAAc,sBAAsB,CAAC"}

@@ -1,3 +1,58 @@
-test
 
-<skeleton-block width="40" height="20" effect="fade"></skeleton-block>
+<form [formGroup]="form">
+    <div class="theme" [ngClass]="'theme-'+form.get('theme').value">
+        <div class="container">
+            <p class="buttons">
+                <button type="button" (click)="setEffect('fade')">
+                Fade
+                </button>
+                <button type="button" (click)="setEffect('pulse')">
+                Pulse
+                </button>
+                <button type="button" (click)="setEffect('blink')">
+                Blink
+                </button>
+
+                <label>
+                    <input type="radio" value="light" formControlName="theme">
+                    <span>Light</span>
+                </label>
+                <label>
+                    <input type="radio" value="dark" formControlName="theme">
+                    <span>Dark</span>
+                </label>
+            </p>
+        <h1 skeleton-text [effect]="effect">
+            Loading Page Title
+        </h1>
+        <div class="demo-cols">
+            <div class="demo-col">
+            <skeleton-image [effect]="effect" width="400" height="200"></skeleton-image>
+            <h2 skeleton-text [effect]="effect" tag="h2">
+                Loading Placeholder
+            </h2>
+            <p skeleton-text [effect]="effect">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
+                animi nihil ullam! Asperiores recusandae ullam deleniti, modi
+                adipisci omnis alias quis magnam quod quidem dolores
+                exercitationem dolor repellendus neque ex.
+            </p>
+            </div>
+            <div class="demo-col">
+            <ul class="demo-list">
+                <li *ngFor="let item of demoListItems" key="itemIndex" [ngClass]="'skeleton-effect-'+effect">
+                <div class="demo-list-avatar">
+                    <skeleton-avatar size="100"></skeleton-avatar>
+                </div>
+                <div class="demo-list-content">
+                    <p skeleton-text class="demo-list-title">{{item.title</p>
+                    <p skeleton-text class="demo-list-description">{{item.description}}</p>
+                    <skeleton-block width="30%" height="0.75em"></skeleton-block>
+                </div>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </div>
+  </div>
+</form>

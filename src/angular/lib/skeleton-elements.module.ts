@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
-import { SkeletonAvatarComponent } from './skeleton-avatar/skeleton-avatar.component';
-import { SkeletonBlockComponent } from './skeleton-block/skeleton-block.component';
-import { SkeletonTextComponent } from './skeleton-text/skeleton-text.component';
-import { SkeletonImageComponent } from './skeleton-image/skeleton-image.component';
+import { SkeletonBlockComponent } from './skeleton-block';
+import { SkeletonAvatarComponent } from './skeleton-avatar';
+import { CommonModule } from '@angular/common';
+import { SkeletonTextDirective } from './skeleton-text';
+import { SkeletonImageComponent } from './skeleton-image';
 
 @NgModule({
   declarations: [
     SkeletonBlockComponent,
-    SkeletonTextComponent,
-    SkeletonImageComponent,
     SkeletonAvatarComponent,
+    SkeletonTextDirective,
+    SkeletonImageComponent,
   ],
   exports: [
     SkeletonBlockComponent,
-    SkeletonTextComponent,
-    SkeletonImageComponent,
     SkeletonAvatarComponent,
+    SkeletonTextDirective,
+    SkeletonImageComponent,
   ],
+  imports: [CommonModule],
 })
 export class SkeletonElementsModule {}
