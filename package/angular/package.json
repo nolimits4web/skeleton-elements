@@ -14,8 +14,6 @@
   "esm2015": "esm2015/skeleton-elements-angular.js",
   "fesm2015": "fesm2015/skeleton-elements-angular.js",
   "typings": "skeleton-elements-angular.d.ts",
-  "sideEffects": false,
-  "scripts": {
-    "prepublishOnly": "node --eval \"console.error('ERROR: Trying to publish a package that has been compiled by Ivy. This is not allowed.\\nPlease delete and rebuild the package, without compiling with Ivy, before attempting to publish.\\n')\" && exit 1"
-  }
+  "metadata": "skeleton-elements-angular.metadata.json",
+  "sideEffects": false
 }
