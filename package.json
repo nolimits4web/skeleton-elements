@@ -41,19 +41,7 @@
     "url": "https://github.com/nolimits4web/skeleton-elements/issues"
   },
   "homepage": "https://github.com/nolimits4web/skeleton-elements#readme",
-  "dependencies": {
-    "@angular/animations": "~10.1.0",
-    "@angular/common": "~10.1.0",
-    "@angular/compiler": "~10.1.0",
-    "@angular/core": "~10.1.0",
-    "@angular/forms": "~10.1.0",
-    "@angular/platform-browser": "~10.1.0",
-    "@angular/platform-browser-dynamic": "~10.1.0",
-    "@angular/router": "~10.1.0",
-    "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1001.7",
     "@angular/cli": "~10.1.0",
@@ -91,11 +79,6 @@
     "inquirer": "^7.3.3",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
-    "karma": "~5.0.0",
-    "karma-chrome-launcher": "~3.1.0",
-    "karma-coverage-istanbul-reporter": "~3.0.2",
-    "karma-jasmine": "~4.0.0",
-    "karma-jasmine-html-reporter": "^1.5.0",
     "lint-staged": "^10.5.0",
     "mini-css-extract-plugin": "^0.9.0",
     "ng-packagr": "^10.1.2",
@@ -122,6 +105,17 @@
     "vue-loader": "^16.0.0-beta.9",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "@angular/animations": "~10.1.0",
+    "@angular/common": "~10.1.0",
+    "@angular/compiler": "~10.1.0",
+    "@angular/core": "~10.1.0",
+    "@angular/forms": "~10.1.0",
+    "@angular/platform-browser": "~10.1.0",
+    "@angular/platform-browser-dynamic": "~10.1.0",
+    "@angular/router": "~10.1.0",
+    "rxjs": "~6.6.0",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   }
 }
