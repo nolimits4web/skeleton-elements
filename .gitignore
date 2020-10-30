@@ -35,7 +35,9 @@ node_modules/
 Thumbs.db
 
 package/**/*.js
+package/**/*.map
 package/**/*.ts
+package/**/*.d.ts*
 package/**/*.css
 package/**/*.scss
 package/**/*.ttf
