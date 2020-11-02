@@ -1,5 +1,9 @@
 # Change Log
 
+## 3.1.0
+
+- Added Angular package (Thanks to @vltansky)
+
 ## 3.0.0
 
 - Moved to single NPM `skeleton-elements` package
