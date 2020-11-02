@@ -2,3 +2,5 @@
 node_modules
 package
 **/*.svelte
+src/angular/**
+demo/angular/**
