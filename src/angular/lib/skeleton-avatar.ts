@@ -7,7 +7,7 @@ import { multiplySvgPointsService } from './multiply-svg-points';
     class: 'skeleton-avatar',
     '[class.skeleton-effect-fade]': 'effect === "fade"',
     '[class.skeleton-effect-pulse]': 'effect === "pulse"',
-    '[class.skeleton-effect-blink]': 'effect === "blink"',
+    '[class.skeleton-effect-wave]': 'effect === "blink" || effect === "wave"',
   },
   template: `<svg
       xmlns="http://www.w3.org/2000/svg"

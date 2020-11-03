@@ -6,7 +6,7 @@ import { SkeletonEffects } from './skeletonEffect';
     class: 'skeleton-text',
     '[class.skeleton-effect-fade]': 'effect === "fade"',
     '[class.skeleton-effect-pulse]': 'effect === "pulse"',
-    '[class.skeleton-effect-blink]': 'effect === "blink"',
+    '[class.skeleton-effect-wave]': 'effect === "blink" || effect === "wave"',
   },
 })
 export class SkeletonTextDirective {

@@ -1,1 +1,1 @@
-export type SkeletonEffects = 'fade' | 'pulse' | 'blink';
+export type SkeletonEffects = 'fade' | 'pulse' | 'blink' | 'wave';

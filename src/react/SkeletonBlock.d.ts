@@ -25,7 +25,7 @@ interface SkeletonBlockOptions extends React.HTMLAttributes<HTMLElement> {
   /**
    * Animation effectt
    */
-  effect: 'fade' | 'pulse' | 'blink';
+  effect: 'fade' | 'pulse' | 'blink' | 'wave';
 }
 
 declare const SkeletonBlock: React.FunctionComponent<SkeletonBlockOptions>;

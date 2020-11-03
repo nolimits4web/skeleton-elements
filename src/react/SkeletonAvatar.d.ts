@@ -44,7 +44,7 @@ interface SkeletonAvatarOptions extends React.HTMLAttributes<HTMLElement> {
   /**
    * Animation effectt
    */
-  effect: 'fade' | 'pulse' | 'blink';
+  effect: 'fade' | 'pulse' | 'blink' | 'wave';
 }
 
 declare const SkeletonAvatar: React.FunctionComponent<SkeletonAvatarOptions>;

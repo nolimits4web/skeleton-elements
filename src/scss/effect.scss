@@ -1,31 +1,36 @@
-.skeleton-effect-blink {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 25%,
-    black 75%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 25%,
-    black 75%,
-    transparent 100%
-  );
-  -webkit-mask-size: 200% 100%;
-  mask-size: 200% 100%;
-  -webkit-mask-repeat: repeat;
-  mask-repeat: repeat;
-  -webkit-mask-position: 50% top;
-  mask-position: 50% top;
-  animation: skeleton-effect-blink 1s infinite;
-}
-.skeleton-effect-fade {
-  animation: skeleton-effect-fade 1s infinite;
-}
-.skeleton-effect-pulse {
-  animation: skeleton-effect-pulse 1s infinite;
+.skeleton-effect {
+  &-blink,
+  &-wave {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 25%,
+      black 75%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 25%,
+      black 75%,
+      transparent 100%
+    );
+    -webkit-mask-size: 200% 100%;
+    mask-size: 200% 100%;
+    -webkit-mask-repeat: repeat;
+    mask-repeat: repeat;
+    -webkit-mask-position: 50% top;
+    mask-position: 50% top;
+    animation: skeleton-effect-blink 1s infinite;
+  }
+
+  &-fade {
+    animation: skeleton-effect-fade 1s infinite;
+  }
+
+  &-pulse {
+    animation: skeleton-effect-pulse 1s infinite;
+  }
 }
 @keyframes skeleton-effect-fade {
   0% {
@@ -38,7 +43,7 @@
     opacity: 1;
   }
 }
-@keyframes skeleton-effect-blink {
+@keyframes skeleton-effect-wave {
   0% {
     -webkit-mask-position: 50% top;
     mask-position: 50% top;
