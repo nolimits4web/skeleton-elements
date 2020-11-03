@@ -1,23 +1,21 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { SkeletonEffects } from 'skeleton-elements/angular';
 
-const demoItem = {
-  title: 'Placeholder name',
-  description: 'Lorem ipsum, dolor sit amet consectetur',
-};
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  effect: string;
+  effect: SkeletonEffects;
   form = new FormGroup({
     theme: new FormControl('light'),
   });
 
   demoListItems = Array.from({ length: 4 }).map(() => ({
-    ...demoItem,
+    title: 'Placeholder name',
+    description: 'Lorem ipsum, dolor sit amet consectetur',
   }));
 
   setEffect(val) {

@@ -13,8 +13,7 @@
     "module": "es2020",
     "lib": ["es2018", "dom"],
     "paths": {
-      "skeleton-elements": ["package"],
-      "skeleton-elements/*": ["package/*"]
+      "skeleton-elements/angular": ["src/angular/public-api.ts"]
     }
   }
 }
