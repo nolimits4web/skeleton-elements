@@ -36,8 +36,8 @@ const App = () => {
           <button type="button" onClick={() => load('pulse')}>
             Pulse
           </button>
-          <button type="button" onClick={() => load('blink')}>
-            Blink
+          <button type="button" onClick={() => load('wave')}>
+            Wave
           </button>
 
           <label>
