@@ -4,7 +4,7 @@
       <p class="buttons">
         <button type="button" @click="load('fade')">Fade</button>
         <button type="button" @click="load('pulse')">Pulse</button>
-        <button type="button" @click="load('blink')">Blink</button>
+        <button type="button" @click="load('wave')">Wave</button>
 
         <label>
           <input

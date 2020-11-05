@@ -3,7 +3,7 @@
     <p class="buttons">
       <button type="button" on:click={() => load('fade')}>Fade</button>
       <button type="button" on:click={() => load('pulse')}>Pulse</button>
-      <button type="button" on:click={() => load('blink')}>Blink</button>
+      <button type="button" on:click={() => load('wave')}>Wave</button>
 
       <label>
         <input type="radio" checked={theme === 'light'} on:change={() => theme = 'light'} />

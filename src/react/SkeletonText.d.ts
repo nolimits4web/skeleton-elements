@@ -11,7 +11,7 @@ interface SkeletonTextOptions extends React.HTMLAttributes<HTMLElement> {
   /**
    * Animation effectt
    */
-  effect: 'fade' | 'pulse' | 'blink';
+  effect: 'fade' | 'pulse' | 'blink' | 'wave';
 }
 
 declare const SkeletonText: React.FunctionComponent<SkeletonTextOptions>;
