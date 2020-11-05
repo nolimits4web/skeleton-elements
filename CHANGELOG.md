@@ -1,5 +1,9 @@
 # Change Log
 
+## 3.2.0
+
+- `blink` effect renamed to `wave` (`blink` will still work)
+
 ## 3.1.0
 
 - Added Angular package (Thanks to @vltansky)
