@@ -26,7 +26,7 @@ npm i skeleton-elements --save
 Skeleton Elements requires stylesheet to be included:
 
 ```
-<link rel="stylesheet" href="path/to/skeleton-elements.css>
+<link rel="stylesheet" href="path/to/skeleton-elements.css">
 ```
 
 Wiht bunder (like webpack) you can import syles directly from JavaScript:
