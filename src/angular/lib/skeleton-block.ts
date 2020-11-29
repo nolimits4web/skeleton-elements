@@ -10,10 +10,12 @@ import { SkeletonEffects } from './skeletonEffect';
     '[class.skeleton-effect-wave]': 'effect === "blink" || effect === "wave"',
     '[style.width]': 'width',
     '[style.height]': 'height',
+    '[style.border-radius]': 'radius',
   },
 })
 export class SkeletonBlockComponent {
   @Input() width: string;
   @Input() height: string;
   @Input() effect: SkeletonEffects;
+  @Input() radius: string;
 }
