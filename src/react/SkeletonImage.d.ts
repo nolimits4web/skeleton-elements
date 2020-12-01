@@ -45,6 +45,13 @@ interface SkeletonImageOptions extends React.HTMLAttributes<HTMLElement> {
    * Animation effectt
    */
   effect: 'fade' | 'pulse' | 'blink' | 'wave';
+
+  /**
+   * Border radius
+   *
+   * @default undefined
+   */
+  borderRadius: string;
 }
 
 declare const SkeletonImage: React.FunctionComponent<SkeletonImageOptions>;
