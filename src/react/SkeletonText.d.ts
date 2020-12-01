@@ -9,7 +9,7 @@ interface SkeletonTextOptions extends React.HTMLAttributes<HTMLElement> {
   tag: string;
 
   /**
-   * Animation effectt
+   * Animation effect
    */
   effect: 'fade' | 'pulse' | 'blink' | 'wave';
 }

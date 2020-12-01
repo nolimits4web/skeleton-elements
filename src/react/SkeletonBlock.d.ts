@@ -23,7 +23,7 @@ interface SkeletonBlockOptions extends React.HTMLAttributes<HTMLElement> {
   height: string;
 
   /**
-   * Animation effectt
+   * Animation effect
    */
   effect: 'fade' | 'pulse' | 'blink' | 'wave';
 }
