@@ -9,6 +9,7 @@ export default {
     },
     width: [String, Number],
     height: [String, Number],
+    borderRadius: String,
     effect: String,
   },
   render() {
@@ -22,6 +23,7 @@ export default {
         style: {
           width: this.width,
           height: this.height,
+          borderRadius: this.borderRadius,
         },
       },
       this.$slots.default && this.$slots.default(),
