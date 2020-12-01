@@ -8,8 +8,6 @@ import { multiplySvgPointsService } from './multiply-svg-points';
     '[class.skeleton-effect-fade]': 'effect === "fade"',
     '[class.skeleton-effect-pulse]': 'effect === "pulse"',
     '[class.skeleton-effect-wave]': 'effect === "blink" || effect === "wave"',
-    '[style.width.px]': 'width',
-    '[style.height.px]': 'height',
   },
   template: `<svg
       xmlns="http://www.w3.org/2000/svg"
