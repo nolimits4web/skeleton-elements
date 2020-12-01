@@ -19,6 +19,7 @@
     <div class="demo-cols">
       <div class="demo-col">
         <SkeletonImage effect={effect} width={400} height={200} />
+        <SkeletonImage effect={effect} width={20} height={20} borderRadius="10px" />
         <SkeletonText effect={effect} tag="h2">Loading Placeholder</SkeletonText>
         <SkeletonText effect={effect} tag="p">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum animi nihil ullam! Asperiores recusandae ullam deleniti, modi adipisci omnis alias quis magnam quod quidem dolores exercitationem dolor repellendus neque ex.</SkeletonText>
       </div>
@@ -32,7 +33,7 @@
               <div class="demo-list-content">
                 <SkeletonText tag="p" class="demo-list-title">{item.title}</SkeletonText>
                 <SkeletonText tag="p" class="demo-list-description">{item.description}</SkeletonText>
-                <SkeletonBlock width="30%" height="0.75em" />
+                <SkeletonBlock width="30%" height="0.75em" borderRadius="3px" />
               </div>
             </li>
           {/each}

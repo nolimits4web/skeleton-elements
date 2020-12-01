@@ -21,6 +21,7 @@
 
   export let tag = 'div';
   export let effect = undefined;
+  export let borderRadius = undefined;
 
   export let style = undefined;
   let className = undefined;
@@ -43,6 +44,7 @@
   $: skeletonStyle = style || '';
   $: if (width) skeletonStyle += `;width: ${width}`;
   $: if (height) skeletonStyle += `;height: ${height}`;
+  $: if (borderRadius) skeletonStyle += `;border-radius: ${borderRadius}`;
 
   $: skeletonClassName = [
     'skeleton-block',
