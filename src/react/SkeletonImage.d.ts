@@ -42,7 +42,7 @@ interface SkeletonImageOptions extends React.HTMLAttributes<HTMLElement> {
   iconColor: string;
 
   /**
-   * Animation effectt
+   * Animation effect
    */
   effect: 'fade' | 'pulse' | 'blink' | 'wave';
 
