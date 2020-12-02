@@ -8,6 +8,7 @@
     height={height}
     viewBox={`0 0 ${width} ${height}`}
     preserveAspectRatio="none"
+    style={borderRadius ? `border-radius: ${borderRadius}` : ''}
   >
     <polygon
       style={color ? `fill: ${color}` : ''}
@@ -30,6 +31,7 @@
   export let iconColor = undefined;
   export let showIcon = true;
   export let effect = undefined;
+  export let borderRadius = undefined;
 
   let className = undefined;
   export { className as class };

@@ -23,9 +23,19 @@ export default {
       default: true,
     },
     effect: String,
+    borderRadius: String,
   },
   render() {
-    const { tag, color, iconColor, showIcon, width, height, effect } = this;
+    const {
+      tag,
+      color,
+      iconColor,
+      showIcon,
+      width,
+      height,
+      effect,
+      borderRadius,
+    } = this;
     return h(
       tag,
       {
@@ -42,6 +52,7 @@ export default {
             width,
             height,
             viewBox: `0 0 ${width} ${height}`,
+            style: { borderRadius },
             preserveAspectRatio: 'none',
           },
           [

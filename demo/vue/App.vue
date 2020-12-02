@@ -30,6 +30,12 @@
       <div class="demo-cols">
         <div class="demo-col">
           <skeleton-image :effect="effect" :width="400" :height="200" />
+          <skeleton-image
+            :effect="effect"
+            :width="20"
+            :height="20"
+            borderRadius="5px"
+          />
           <skeleton-text :effect="effect" tag="h2"
             >Loading Placeholder</skeleton-text
           >
@@ -57,7 +63,11 @@
                 <skeleton-text tag="p" class="demo-list-description">{{
                   item.description
                 }}</skeleton-text>
-                <skeleton-block width="30%" height="0.75em" />
+                <skeleton-block
+                  width="30%"
+                  height="0.75em"
+                  borderRadius="3px"
+                />
               </div>
             </li>
           </ul>

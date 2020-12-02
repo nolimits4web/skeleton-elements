@@ -5,6 +5,7 @@ const SkeletonImage = ({
   tag: Tag = 'span',
   width = 1200,
   height = 600,
+  borderRadius,
   color,
   iconColor,
   showIcon = true,
@@ -32,6 +33,7 @@ const SkeletonImage = ({
         width={width}
         height={height}
         viewBox={`0 0 ${width} ${height}`}
+        style={{ borderRadius }}
         preserveAspectRatio="none"
       >
         <polygon

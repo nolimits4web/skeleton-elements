@@ -14,6 +14,7 @@ import { multiplySvgPointsService } from './multiply-svg-points';
       [attr.width]="width"
       [attr.height]="height"
       [attr.viewBox]="'0 0 ' + width + ' ' + height"
+      [style.border-radius]="borderRadius"
       preserveAspectRatio="none"
     >
       <polygon
@@ -42,6 +43,7 @@ export class SkeletonImageComponent {
   @Input() showIcon: boolean = true;
   @Input() iconColor: string;
   @Input() effect: SkeletonEffects;
+  @Input() borderRadius: string;
 
   multiplyPoints(pointsString) {
     return multiplySvgPointsService(pointsString, 56, this.width, this.height);

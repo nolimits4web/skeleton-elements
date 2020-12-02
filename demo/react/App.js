@@ -64,6 +64,12 @@ const App = () => {
         <div className="demo-cols">
           <div className="demo-col">
             <SkeletonImage effect={effect} width={400} height={200} />
+            <SkeletonImage
+              effect={effect}
+              width={20}
+              height={20}
+              borderRadius="10px"
+            />
             <SkeletonText effect={effect} tag="h2">
               Loading Placeholder
             </SkeletonText>
@@ -91,7 +97,11 @@ const App = () => {
                     <SkeletonText tag="p" className="demo-list-description">
                       {item.description}
                     </SkeletonText>
-                    <SkeletonBlock width="30%" height="0.75em" />
+                    <SkeletonBlock
+                      width="30%"
+                      height="0.75em"
+                      borderRadius="3px"
+                    />
                   </div>
                 </li>
               ))}

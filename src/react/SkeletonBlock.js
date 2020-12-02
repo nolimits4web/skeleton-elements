@@ -4,6 +4,7 @@ const SkeletonBlock = ({
   tag: Tag = 'div',
   width,
   height,
+  borderRadius,
   effect,
   className,
   style,
@@ -13,6 +14,7 @@ const SkeletonBlock = ({
   const skeletonStyle = style || {};
   if (width) skeletonStyle.width = width;
   if (height) skeletonStyle.height = height;
+  if (borderRadius) skeletonStyle.borderRadius = borderRadius;
 
   const skeletonClassName = [
     'skeleton-block',

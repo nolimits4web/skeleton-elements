@@ -23,6 +23,12 @@
             width="400"
             height="200"
           ></skeleton-image>
+          <skeleton-image
+            [effect]="effect"
+            borderRadius="10px"
+            width="20"
+            height="20"
+          ></skeleton-image>
           <h2 skeleton-text [effect]="effect" tag="h2">Loading Placeholder</h2>
           <p skeleton-text [effect]="effect">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum
@@ -46,7 +52,11 @@
                 <p skeleton-text class="demo-list-description">
                   {{ item.description }}
                 </p>
-                <skeleton-block width="30%" height="0.75em"></skeleton-block>
+                <skeleton-block
+                  width="30%"
+                  height="0.75em"
+                  borderRadius="3px"
+                ></skeleton-block>
               </div>
             </li>
           </ul>
