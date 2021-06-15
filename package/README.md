@@ -26,7 +26,7 @@ npm i skeleton-elements --save
 Skeleton Elements requires stylesheet to be included:
 
 ```
-<link rel="stylesheet" href="path/to/skeleton-elements.css">
+<link rel="stylesheet" href="path/to/skeleton-elements.css" />
 ```
 
 With bundler (like webpack) you can import styles directly from JavaScript:
