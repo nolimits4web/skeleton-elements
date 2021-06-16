@@ -30,7 +30,7 @@ interface SkeletonImageOptions extends React.HTMLAttributes<HTMLElement> {
   color: string;
 
   /**
-   * Defines wether to show icon or not
+   * Defines whether to show icon or not
    *
    * @default true
    */
