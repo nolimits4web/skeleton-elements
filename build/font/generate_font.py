@@ -1,9 +1,8 @@
 import fontforge
 import os
-import md5
 import subprocess
 import tempfile
-import json
+import hashlib
 import copy
 
 SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -12,7 +11,7 @@ OUTPUT_FONT_DIR = os.path.join(SCRIPT_PATH, '..', '..', 'src/fonts')
 AUTO_WIDTH = False
 KERNING = 0
 
-m = md5.new()
+m = hashlib.md5()
 
 f = fontforge.font()
 f.encoding = 'UnicodeFull'
@@ -28,10 +27,9 @@ for char in "0123456789abcdefghijklmnopqrstuvwzxyzABCDEFGHIJKLMNOPQRSTUVWZXYZ_- 
   glyph.width = 256
 
 font_name = 'skeleton';
-m.update(font_name + ';')
+m.update(bytes(font_name + ';', "ascii"))
 
 fontfile = '%s/skeleton' % (OUTPUT_FONT_DIR)
-print fontfile;
 build_hash = m.hexdigest()
 
 f.fontname = font_name

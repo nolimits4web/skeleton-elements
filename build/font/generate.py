@@ -1,6 +1,5 @@
 from subprocess import call
 import os
-import json
 
 BUILDER_PATH = os.path.dirname(os.path.abspath(__file__))
 
