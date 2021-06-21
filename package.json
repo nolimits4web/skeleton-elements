@@ -4,7 +4,7 @@
   "description": "Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) are representations of UI that will be available (loaded) soon. They are designed to improve perceived performance.",
   "main": "index.js",
   "scripts": {
-    "build:font": "python ./build/font/generate.py && ttf2woff ./src/fonts/skeleton.ttf ./src/fonts/skeleton.woff && node ./build/font-base64.js",
+    "build:font": "python ./build/font/generate.py && node build/ttf2woff && node ./build/font-base64.js",
     "build:core": "node ./build/core",
     "build:react": "node ./build/react",
     "build:vue": "node ./build/vue",
