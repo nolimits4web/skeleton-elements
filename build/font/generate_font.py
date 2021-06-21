@@ -10,6 +10,7 @@ SQUARE_PATH = os.path.join(SCRIPT_PATH, 'square.svg')
 OUTPUT_FONT_DIR = os.path.join(SCRIPT_PATH, '..', '..', 'src/fonts')
 AUTO_WIDTH = False
 KERNING = 0
+SPECIAL_CHARS = "_- .,:;/\!/*&'\"|(){}[]"
 def char_range(arr):
     result = [];
     for m in arr:
@@ -18,11 +19,8 @@ def char_range(arr):
             result.append(chr(c))
     return result
 
-
 def split(word):
     return [char for char in word]
-
-
 
 def generate_font(name, font_arr):
   m = hashlib.md5()
@@ -57,9 +55,8 @@ def generate_font(name, font_arr):
   # WOFF2 Font
   subprocess.call('woff2_compress ' + fontfile + '.ttf', shell=True)
 
-
-generate_font('', char_range(['a-z', 'A-Z', '1-9']) + split("_- .,:;/\!/*&'\"|(){}[]")) # english
-generate_font('-ru', char_range(['а-я', 'А-Я']))
-generate_font('-il', char_range(['\u0590-\u05fe'])) # hebrew
-generate_font('-ar', char_range(['\u0621-\u064A'])) # arabic
-generate_font('-fa', char_range(['\u0600-\u06FF'])) # persian
+generate_font('', char_range(['a-z', 'A-Z', '0-9']) + split(SPECIAL_CHARS)) # english
+generate_font('-ru', char_range(['а-я', 'А-Я', '0-9']) + split(SPECIAL_CHARS)) #russian
+generate_font('-il', char_range(['\u0590-\u05fe', '0-9']) + split(SPECIAL_CHARS)) # hebrew
+generate_font('-ar', char_range(['\u0621-\u064A', '0-9']) + split(SPECIAL_CHARS)) # arabic
+generate_font('-fa', char_range(['\u0600-\u06FF', '0-9']) + split(SPECIAL_CHARS)) # persian
