@@ -1,9 +1,8 @@
 import fontforge
 import os
-import md5
 import subprocess
 import tempfile
-import json
+import hashlib
 import copy
 
 SCRIPT_PATH = os.path.dirname(os.path.abspath(__file__))
@@ -23,7 +22,7 @@ def char_range(arr):
 def split(word):
     return [char for char in word]
 
-m = md5.new()
+m = hashlib.md5()
 
 f = fontforge.font()
 f.encoding = 'UnicodeFull'
@@ -43,10 +42,9 @@ for char in char_range(['a-z', 'A-Z', '1-9', 'а-я', 'А-Я', arabic, hebrew, p
   glyph.width = 256
 
 font_name = 'skeleton';
-m.update(font_name + ';')
+m.update(bytes(font_name + ';', "ascii"))
 
 fontfile = '%s/skeleton' % (OUTPUT_FONT_DIR)
-print fontfile;
 build_hash = m.hexdigest()
 
 f.fontname = font_name
