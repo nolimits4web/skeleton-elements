@@ -22,39 +22,44 @@ def char_range(arr):
 def split(word):
     return [char for char in word]
 
-m = hashlib.md5()
 
-f = fontforge.font()
-f.encoding = 'UnicodeFull'
-f.design_size = 28
-f.em = 512
-f.ascent = 448
-f.descent = 64
 
-# Import base characters
-hebrew = '\u0590-\u05fe'
-arabic = '\u0621-\u064A'
-persian = '\u0600-\u06FF'
-special = split("_- .,:;/\!/*&'\"|(){}[]")
-for char in char_range(['a-z', 'A-Z', '1-9', 'а-я', 'А-Я', arabic, hebrew, persian]) + special:
-  glyph = f.createChar(ord(char))
-  glyph.importOutlines(SQUARE_PATH)
-  glyph.width = 256
+def generate_font(name, font_arr):
+  m = hashlib.md5()
 
-font_name = 'skeleton';
-m.update(bytes(font_name + ';', "ascii"))
+  f = fontforge.font()
+  f.encoding = 'UnicodeFull'
+  f.design_size = 28
+  f.em = 512
+  f.ascent = 448
+  f.descent = 64
 
-fontfile = '%s/skeleton' % (OUTPUT_FONT_DIR)
-build_hash = m.hexdigest()
+  for char in font_arr:
+    glyph = f.createChar(ord(char))
+    glyph.importOutlines(SQUARE_PATH)
+    glyph.width = 256
 
-f.fontname = font_name
-f.familyname = font_name
-f.fullname = font_name
+  font_name = 'skeleton';
+  m.update(bytes(font_name + ';', "ascii"))
 
-f.generate(fontfile + '.ttf')
+  fontfile = '%s/skeleton%s' % (OUTPUT_FONT_DIR, name)
+  print(fontfile);
 
-# # Hint the TTF file
-subprocess.call('ttfautohint -s -f -n ' + fontfile + '.ttf ' + fontfile + '-hinted.ttf > /dev/null 2>&1 && mv ' + fontfile + '-hinted.ttf ' + fontfile + '.ttf', shell=True)
+  f.fontname = font_name
+  f.familyname = font_name
+  f.fullname = font_name
 
-# WOFF2 Font
-subprocess.call('woff2_compress ' + fontfile + '.ttf', shell=True)
+  f.generate(fontfile + '.ttf')
+
+  # # Hint the TTF file
+  subprocess.call('ttfautohint -s -f -n ' + fontfile + '.ttf ' + fontfile + '-hinted.ttf > /dev/null 2>&1 && mv ' + fontfile + '-hinted.ttf ' + fontfile + '.ttf', shell=True)
+
+  # WOFF2 Font
+  subprocess.call('woff2_compress ' + fontfile + '.ttf', shell=True)
+
+
+generate_font('', char_range(['a-z', 'A-Z', '1-9']) + split("_- .,:;/\!/*&'\"|(){}[]")) # english
+generate_font('-ru', char_range(['а-я', 'А-Я']))
+generate_font('-il', char_range(['\u0590-\u05fe'])) # hebrew
+generate_font('-ar', char_range(['\u0621-\u064A'])) # arabic
+generate_font('-fa', char_range(['\u0600-\u06FF'])) # persian
