@@ -1,5 +1,13 @@
 # Change Log
 
+# [3.4.0](https://github.com/nolimits4web/skeleton-elements/compare/v3.3.0...v3.4.0) (2021-07-06)
+
+### Features
+
+- correct Svelte CJS build
+- generate font files ([c822fea](https://github.com/nolimits4web/skeleton-elements/commit/c822fea2438a0d3b4f1193db5d00c4173608b775))
+- russian, arabic, hebrew, persian support ([3f85047](https://github.com/nolimits4web/skeleton-elements/commit/3f85047e65ae629a7e9e29e53abdc83410fc2f9b))
+
 ## 3.3.0
 
 - Added `borderRadius` prop for `SkeletonImage` and `SkeletonAvatar` (Thanks to @vltansky)
