@@ -21,7 +21,8 @@
     "check-format": "npm run prettier -- --list-different",
     "validate": "npm-run-all --parallel check-format lint build",
     "release": "npm run validate && node ./build/release",
-    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -u -s"
+    "changelog": "npx conventional-changelog -p angular -i CHANGELOG.md -u -s",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
