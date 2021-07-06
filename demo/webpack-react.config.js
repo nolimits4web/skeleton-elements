@@ -1,5 +1,4 @@
 const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -36,6 +35,7 @@ module.exports = {
     contentBase: '/demo/react/public/',
     disableHostCheck: true,
     historyApiFallback: true,
+    port: 8081,
     watchOptions: {
       poll: 1000,
     },
@@ -106,7 +106,6 @@ module.exports = {
     }),
     new webpack.optimize.ModuleConcatenationPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[hash].css',
       chunkFilename: 'css/[name].[chunkhash].css',
@@ -127,11 +126,5 @@ module.exports = {
             }
           : false,
     }),
-    new CopyWebpackPlugin([
-      {
-        from: resolvePath('demo/static'),
-        to: resolvePath('demo/react/public/static'),
-      },
-    ]),
   ],
 };
