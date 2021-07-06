@@ -25,15 +25,8 @@ export default {
     effect: String,
   },
   render() {
-    const {
-      tag,
-      color,
-      iconColor,
-      showIcon,
-      size,
-      borderRadius,
-      effect,
-    } = this;
+    const { tag, color, iconColor, showIcon, size, borderRadius, effect } =
+      this;
     return h(
       tag,
       {
