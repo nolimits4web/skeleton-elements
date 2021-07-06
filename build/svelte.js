@@ -30,7 +30,7 @@ function transformFile(fileName, modules, isUtils) {
   if (fileName.indexOf('.svelte') >= 0) {
     let fileContent = fs.readFileSync(input, 'utf8');
     const svelteResult = svelte.compile(fileContent, {
-      format: 'esm',
+      format: modules || 'esm',
       filename: fileName,
     });
     fileContent = svelteResult.js.code.replace(/\.\.\/utils\//g, './');
@@ -62,10 +62,10 @@ function build() {
     .readdirSync(path.resolve(__dirname, '../src/utils'))
     .filter((fileName) => fileName[0] !== '.');
 
-  filesToTransform.forEach((file) => transformFile(file, 'commonjs'));
+  filesToTransform.forEach((file) => transformFile(file, 'cjs'));
   filesToTransform.forEach((file) => transformFile(file, false));
 
-  utils.forEach((file) => transformFile(file, 'commonjs', true));
+  utils.forEach((file) => transformFile(file, 'cjs', true));
   utils.forEach((file) => transformFile(file, false, true));
 }
 
