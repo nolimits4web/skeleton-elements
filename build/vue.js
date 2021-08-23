@@ -46,7 +46,17 @@ function build() {
   // Transform scripts
   const filesToTransform = fs
     .readdirSync(path.resolve(__dirname, '../src/vue'))
-    .filter((fileName) => fileName[0] !== '.');
+    .filter((fileName) => fileName[0] !== '.')
+    .filter((fileName) => fileName[0] !== '.' && fileName.indexOf('.d.ts') < 0);
+
+  const types = fs
+    .readdirSync(path.resolve(__dirname, '../src/vue'))
+    .filter(
+      (fileName) =>
+        fileName[0] !== '.' &&
+        fileName.indexOf('.d.ts') > 0 &&
+        fileName.indexOf('index.d.ts') < 0,
+    );
 
   const utils = fs
     .readdirSync(path.resolve(__dirname, '../src/utils'))
@@ -57,6 +67,18 @@ function build() {
 
   utils.forEach((file) => transformFile(file, 'commonjs', true));
   utils.forEach((file) => transformFile(file, false, true));
+
+  // Copy types
+  types.forEach((typeFile) => {
+    fs.copyFileSync(
+      path.resolve(__dirname, '../src/vue', typeFile),
+      path.resolve(__dirname, '../package/vue/types', typeFile),
+    );
+  });
+  fs.copyFileSync(
+    path.resolve(__dirname, '../src/vue', 'index.d.ts'),
+    path.resolve(__dirname, '../package/vue', 'index.d.ts'),
+  );
 }
 
 build();
