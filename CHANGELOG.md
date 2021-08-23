@@ -1,5 +1,12 @@
 # Change Log
 
+# [3.5.0](https://github.com/nolimits4web/skeleton-elements/compare/v3.4.0...v3.5.0) (2021-08-23)
+
+### Features
+
+- **svelte:** add Svelte components typings ([2fde2ed](https://github.com/nolimits4web/skeleton-elements/commit/2fde2edb51663c3971956305540f34ecc93b82b3))
+- **vue:** add Vue components typings ([f95ac63](https://github.com/nolimits4web/skeleton-elements/commit/f95ac63e0d68e563c5167daf191b0f098c851bf9))
+
 # [3.4.0](https://github.com/nolimits4web/skeleton-elements/compare/v3.3.0...v3.4.0) (2021-07-06)
 
 ### Features
