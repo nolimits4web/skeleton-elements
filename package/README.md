@@ -32,23 +32,30 @@ Skeleton Elements requires stylesheet to be included:
 With bundler (like webpack) you can import styles directly from JavaScript:
 
 ```
-import 'skeleton-elements/skeleton-elements.css';
+import 'skeleton-elements/css';
 ```
 
 Or it can be included for each component separately:
 
-* `skeleton-elements/skeleton-block.css` - Block component
-* `skeleton-elements/skeleton-text.css` - Text component
-* `skeleton-elements/skeleton-effects.css` - Effects
+* `skeleton-elements/css` - All styles
+* `skeleton-elements/css/core` - Core styles
+* `skeleton-elements/css/block` - Block component
+* `skeleton-elements/css/text` - Text component
+* `skeleton-elements/css/image` - Image component
+* `skeleton-elements/css/avatar` - Avatar component
+* `skeleton-elements/css/effects` - Effects
 
 ### SCSS
 
 `SCSS` styles are also included:
 
-* `skeleton-elements/skeleton-elements.scss` - All styles
-* `skeleton-elements/skeleton-block.scss` - Block component
-* `skeleton-elements/skeleton-text.scss` - Text component
-* `skeleton-elements/skeleton-effects.scss` - Effects
+* `skeleton-elements/scss` - All styles
+* `skeleton-elements/scss/core` - Core styles
+* `skeleton-elements/scss/block` - Block component
+* `skeleton-elements/scss/text` - Text component
+* `skeleton-elements/scss/image` - Image component
+* `skeleton-elements/scss/avatar` - Avatar component
+* `skeleton-elements/scss/effects` - Effects
 
 ## Usage
 
