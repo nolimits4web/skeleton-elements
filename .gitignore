@@ -44,3 +44,4 @@ package/**/*.scss
 package/**/*.ttf
 package/**/*.woff
 package/**/*.woff2
+package/**/*.svelte
