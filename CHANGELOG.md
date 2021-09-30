@@ -1,5 +1,11 @@
 # Change Log
 
+# [4.0.0-beta.1](https://github.com/nolimits4web/skeleton-elements/compare/v3.5.0...v4.0.0-beta.1) (2021-09-30)
+
+### Features
+
+- move to pure ES module package ([f92e71d](https://github.com/nolimits4web/skeleton-elements/commit/f92e71d15820cba0f36d2c31709eafe0a422d424))
+
 # [3.5.0](https://github.com/nolimits4web/skeleton-elements/compare/v3.4.0...v3.5.0) (2021-08-23)
 
 ### Features
