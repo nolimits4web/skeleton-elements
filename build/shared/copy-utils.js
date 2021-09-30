@@ -2,9 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = () => {
-  // copy sub modules
-  const srcDir = path.resolve(__dirname, '../../src/scss');
-  const destDir = path.resolve(__dirname, `../../package/scss`);
+  const srcDir = path.resolve(__dirname, '../../src/utils');
+  const destDir = path.resolve(__dirname, `../../package/utils`);
   if (!fs.existsSync(destDir)) {
     fs.mkdirSync(destDir, { recursive: true });
   }

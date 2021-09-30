@@ -6,12 +6,10 @@ const autoprefixer = require('autoprefixer');
 
 function compileFile(fileName) {
   return new Promise((resolve, reject) => {
-    const src = path.resolve(__dirname, `../../src/${fileName}`);
+    const src = path.resolve(__dirname, `../../src/scss/${fileName}`);
     const output = path.resolve(
       __dirname,
-      `../../package/${fileName
-        .replace('skeleton-elements-core', 'skeleton-elements')
-        .replace('.scss', '.css')}`,
+      `../../package/css/${fileName.replace('.scss', '.css')}`,
     );
     sass.render({ file: src }, (sassErr, sassResult) => {
       if (sassErr) {
@@ -36,8 +34,12 @@ function compileFile(fileName) {
 }
 
 module.exports = () => {
+  const output = path.resolve(__dirname, `../../package/css/`);
+  if (!fs.existsSync(output)) {
+    fs.mkdirSync(output, { recursive: true });
+  }
   const files = fs
-    .readdirSync(path.resolve(__dirname, '../../src'))
+    .readdirSync(path.resolve(__dirname, '../../src/scss'))
     .filter((fileName) => fileName.includes('.scss'));
 
   return Promise.all(files.map((fileName) => compileFile(fileName)));

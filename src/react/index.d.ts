@@ -1,7 +1,7 @@
 /* eslint-disable */
-import SkeletonAvatar from './types/SkeletonAvatar';
-import SkeletonBlock from './types/SkeletonBlock';
-import SkeletonImage from './types/SkeletonImage';
-import SkeletonText from './types/SkeletonText';
+import SkeletonAvatar from './SkeletonAvatar';
+import SkeletonBlock from './SkeletonBlock';
+import SkeletonImage from './SkeletonImage';
+import SkeletonText from './SkeletonText';
 
 export { SkeletonAvatar, SkeletonBlock, SkeletonImage, SkeletonText };

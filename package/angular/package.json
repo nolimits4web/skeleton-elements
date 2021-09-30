@@ -2,11 +2,11 @@
   "name": "skeleton-elements/angular",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^10.1.6",
-    "@angular/core": "^10.1.6"
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"
   },
   "dependencies": {
-    "tslib": "^2.0.0"
+    "tslib": "^2.3.0"
   },
   "main": "bundles/skeleton-elements-angular.umd.js",
   "module": "fesm2015/skeleton-elements-angular.js",
@@ -14,6 +14,5 @@
   "esm2015": "esm2015/skeleton-elements-angular.js",
   "fesm2015": "fesm2015/skeleton-elements-angular.js",
   "typings": "skeleton-elements-angular.d.ts",
-  "metadata": "skeleton-elements-angular.metadata.json",
   "sideEffects": false
 }

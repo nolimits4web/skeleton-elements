@@ -3,52 +3,37 @@ const path = require('path');
 const svelte = require('svelte/compiler');
 const babel = require('@babel/core');
 
-const babelOptions = (modules) => ({
+const babelOptions = () => ({
   presets: [
     [
       '@babel/preset-env',
       {
-        modules,
+        modules: false,
         loose: true,
       },
     ],
   ],
 });
 
-function transformFile(fileName, modules, isUtils) {
-  const moduleType = modules ? 'cjs' : 'esm';
-  const input = path.resolve(
-    __dirname,
-    isUtils ? `../src/utils/${fileName}` : `../src/svelte/${fileName}`,
-  );
-  const output = path.resolve(
-    __dirname,
-    fileName === 'index.js'
-      ? `../package/svelte/${fileName.replace('.js', `.${moduleType}.js`)}`
-      : `../package/svelte/${moduleType}/${fileName}`.replace('.svelte', '.js'),
-  );
+// eslint-disable-next-line
+function transformFile(fileName) {
+  const input = path.resolve(__dirname, `../src/svelte/${fileName}`);
+  const output = path.resolve(__dirname, `../package/svelte/${fileName}`);
   if (fileName.indexOf('.svelte') >= 0) {
-    let fileContent = fs.readFileSync(input, 'utf8');
+    const fileContent = fs.readFileSync(input, 'utf8');
     const svelteResult = svelte.compile(fileContent, {
-      format: modules || 'esm',
+      format: 'esm',
       filename: fileName,
     });
-    fileContent = svelteResult.js.code.replace(/\.\.\/utils\//g, './');
-    fs.writeFileSync(path.resolve(output), fileContent);
+    fs.writeFileSync(path.resolve(output), svelteResult.js.code);
     return;
   }
-  babel.transformFile(input, babelOptions(modules), (err, result) => {
+  babel.transformFile(input, babelOptions(), (err, result) => {
     if (err) {
       console.error(err);
       return;
     }
-    let fileContent = result.code.replace(/\.\.\/utils\//g, './');
-    if (fileName.indexOf('index') >= 0) {
-      fileContent = fileContent
-        .replace(/\.\/Skeleton/g, `./${moduleType}/Skeleton`)
-        .replace(/.svelte/g, '');
-    }
-    fs.writeFileSync(path.resolve(output), fileContent);
+    fs.writeFileSync(path.resolve(output), result.code);
   });
 }
 
@@ -56,39 +41,19 @@ function build() {
   // Transform scripts
   const filesToTransform = fs
     .readdirSync(path.resolve(__dirname, '../src/svelte'))
-    .filter((fileName) => fileName[0] !== '.')
     .filter((fileName) => fileName[0] !== '.' && fileName.indexOf('.d.ts') < 0);
 
   const types = fs
     .readdirSync(path.resolve(__dirname, '../src/svelte'))
-    .filter(
-      (fileName) =>
-        fileName[0] !== '.' &&
-        fileName.indexOf('.d.ts') > 0 &&
-        fileName.indexOf('index.d.ts') < 0,
-    );
-
-  const utils = fs
-    .readdirSync(path.resolve(__dirname, '../src/utils'))
-    .filter((fileName) => fileName[0] !== '.');
-
-  filesToTransform.forEach((file) => transformFile(file, 'cjs'));
-  filesToTransform.forEach((file) => transformFile(file, false));
-
-  utils.forEach((file) => transformFile(file, 'cjs', true));
-  utils.forEach((file) => transformFile(file, false, true));
+    .filter((fileName) => fileName[0] !== '.' && fileName.indexOf('.d.ts') > 0);
 
   // Copy types
-  types.forEach((typeFile) => {
+  [...filesToTransform, ...types].forEach((typeFile) => {
     fs.copyFileSync(
       path.resolve(__dirname, '../src/svelte', typeFile),
-      path.resolve(__dirname, '../package/svelte/types', typeFile),
+      path.resolve(__dirname, '../package/svelte', typeFile),
     );
   });
-  fs.copyFileSync(
-    path.resolve(__dirname, '../src/svelte', 'index.d.ts'),
-    path.resolve(__dirname, '../package/svelte', 'index.d.ts'),
-  );
 }
 
 build();
