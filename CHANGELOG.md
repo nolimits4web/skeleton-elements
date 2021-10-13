@@ -1,5 +1,11 @@
 # Change Log
 
+# [4.0.0-beta.6](https://github.com/nolimits4web/skeleton-elements/compare/v4.0.0-beta.3...4.0.0-beta.6) (2021-10-13)
+
+### Bug Fixes
+
+- fix svelte helper import ([a9fb761](https://github.com/nolimits4web/skeleton-elements/commit/a9fb761411240909b81bd3a246d7045826832449))
+
 # [4.0.0-beta.3](https://github.com/nolimits4web/skeleton-elements/compare/v4.0.0-beta.2...v4.0.0-beta.3) (2021-10-13)
 
 ### Bug Fixes
