@@ -1,5 +1,5 @@
 import React from 'react';
-import multiplySvgPoints from '../utils/multiply-svg-points';
+import multiplySvgPoints from '../utils/multiply-svg-points.js';
 
 const SkeletonImage = ({
   tag: Tag = 'span',

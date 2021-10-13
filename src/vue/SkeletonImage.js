@@ -1,5 +1,5 @@
 import { h } from 'vue';
-import multiplySvgPoints from '../utils/multiply-svg-points';
+import multiplySvgPoints from '../utils/multiply-svg-points.js';
 
 export default {
   name: 'skeleton-image',

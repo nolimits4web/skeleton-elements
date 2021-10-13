@@ -29,5 +29,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/jsx-props-no-spreading': 'off',
     'no-console': 'off',
+    'import/extensions': [2, { js: 'always', jsx: 'always', json: 'always' }],
   },
 };

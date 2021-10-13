@@ -23,7 +23,7 @@
   <slot />
 </span>
 <script>
-  import multiplySvgPoints from '../utils/multiply-svg-points';
+  import multiplySvgPoints from '../utils/multiply-svg-points.js';
 
   export let size = 48;
 

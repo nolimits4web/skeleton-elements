@@ -22,7 +22,7 @@
   <slot />
 </span>
 <script>
-  import multiplySvgPoints from '../utils/multiply-svg-points';
+  import multiplySvgPoints from '../utils/multiply-svg-points.svelte';
 
   export let width = 1200;
   export let height = 600;

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+// eslint-disable-next-line
 const svelte = require('svelte/compiler');
 const babel = require('@babel/core');
 

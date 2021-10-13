@@ -4,7 +4,7 @@ import {
   SkeletonBlock,
   SkeletonImage,
   SkeletonAvatar,
-} from '../../src/react';
+} from '../../src/react/index.js';
 
 const App = () => {
   const [effect, setEffect] = useState(null);
