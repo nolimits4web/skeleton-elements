@@ -1,5 +1,11 @@
 # Change Log
 
+# [4.0.0-beta.3](https://github.com/nolimits4web/skeleton-elements/compare/v4.0.0-beta.2...v4.0.0-beta.3) (2021-10-13)
+
+### Bug Fixes
+
+- fix imports extensions ([ed6c9b4](https://github.com/nolimits4web/skeleton-elements/commit/ed6c9b4c42a5019d4ec3f115312c48e2c10c6796))
+
 # [4.0.0-beta.1](https://github.com/nolimits4web/skeleton-elements/compare/v3.5.0...v4.0.0-beta.1) (2021-09-30)
 
 ### Features
