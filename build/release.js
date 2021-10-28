@@ -71,7 +71,7 @@ async function release() {
   await exec.promise(
     `gh release create v${pkg.version} --title "v${
       pkg.version
-    }" --notes "${JSON.stringify(releaseNotes)}"`,
+    }" --notes ${JSON.stringify(releaseNotes)}`,
   );
 }
 
