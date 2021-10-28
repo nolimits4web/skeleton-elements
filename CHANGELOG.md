@@ -1,5 +1,9 @@
 # Change Log
 
+# [4.0.0](https://github.com/nolimits4web/skeleton-elements/compare/v4.0.0-beta.3...4.0.0) (2021-10-13)
+
+- 4.0.0 stable release
+
 # [4.0.0-beta.6](https://github.com/nolimits4web/skeleton-elements/compare/v4.0.0-beta.3...4.0.0-beta.6) (2021-10-13)
 
 ### Bug Fixes

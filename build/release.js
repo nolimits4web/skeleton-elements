@@ -45,6 +45,14 @@ async function release() {
     JSON.stringify(subPkg, null, 2),
   );
 
+  const releaseNotes = fs
+    .readFileSync('./CHANGELOG.md', 'utf-8')
+    .split('\n# [')[1]
+    .split('\n')
+    .filter((_, index) => index > 0)
+    .join('\n')
+    .trim();
+
   await exec.promise('git pull');
   await exec.promise('npm i');
   await exec.promise('git add .');
@@ -59,6 +67,12 @@ async function release() {
   } else {
     await exec.promise(`cd package && npm publish --access public`);
   }
+
+  await exec.promise(
+    `gh release create v${pkg.version} --title "v${
+      pkg.version
+    }" --notes "${JSON.stringify(releaseNotes)}"`,
+  );
 }
 
 release();
