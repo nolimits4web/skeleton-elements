@@ -9,7 +9,7 @@ Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) - UI for 
 
 ## Documentation
 
-See the [documentation](https://skeleton-elements.dev) with examples and API documentation.
+See the [documentation](https://skeleton-elements.nolimits4web.com) with examples and API documentation.
 
 ## Contribution
 
