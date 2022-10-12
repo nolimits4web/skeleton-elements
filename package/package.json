@@ -5,6 +5,7 @@
   "type": "module",
   "exports": {
     "./css": "./css/skeleton-elements.css",
+    "./css/skeleton-elements.css": "./css/skeleton-elements.css",
     "./css/avatar": "./css/core.css",
     "./css/block": "./css/block.css",
     "./css/text": "./css/text.css",
