@@ -54,7 +54,7 @@ async function release() {
     .trim();
 
   await exec.promise('git pull');
-  await exec.promise('npm i');
+  await exec.promise('npm i --force');
   await exec.promise('git add .');
   await exec.promise(`git commit -m "${pkg.version} release"`);
   await exec.promise('git push');

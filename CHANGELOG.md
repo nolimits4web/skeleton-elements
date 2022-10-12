@@ -1,5 +1,11 @@
 # Change Log
 
+# [4.0.1](https://github.com/nolimits4web/skeleton-elements/compare/v4.0.0...v4.0.1) (2022-10-12)
+
+### Features
+
+- add direct CSS bundle export ([19a6b36](https://github.com/nolimits4web/skeleton-elements/commit/19a6b360c6e4c16617bfe3bfb13f7ce01743cc9c))
+
 # [4.0.0](https://github.com/nolimits4web/skeleton-elements/compare/v4.0.0-beta.3...4.0.0) (2021-10-13)
 
 - 4.0.0 stable release

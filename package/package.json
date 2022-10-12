@@ -1,6 +1,6 @@
 {
   "name": "skeleton-elements",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Skeleton elements (aka UI Skeletons, Skeleton Screens, Ghost Elements) - UI for improved perceived performance",
   "type": "module",
   "exports": {
